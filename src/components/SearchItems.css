@@ -1,0 +1,23 @@
+.search-image-div{
+
+    display: flex;
+    flex-direction:row ;
+    padding: 5px;
+}
+.search-image-div:hover{
+
+    background-color: #F0EBE3;
+}
+
+.search-img{
+
+    max-width: 50px;
+    max-height: 50px;
+}
+
+.search-heading{
+
+    color:rgb(22, 20, 20);
+    margin-left: 5px;
+    
+}

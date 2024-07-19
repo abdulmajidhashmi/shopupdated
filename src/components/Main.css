@@ -1,0 +1,22 @@
+:root{
+
+    --primary-color:#912BBC;
+}
+
+*{
+
+    margin:0;
+    padding:0;
+    font-family: "google-font";
+}
+
+@font-face {
+    font-family: "google-font";
+    src: url('./../fonts/ProductSans-Regular.ttf');
+}
+
+
+a{
+    text-decoration: none;
+}
+

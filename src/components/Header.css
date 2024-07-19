@@ -1,0 +1,426 @@
+.search-bar {
+
+    width: 70%;
+    height: 50px;
+    border-radius: 3px;
+    outline: none;
+    border: none;
+    padding: 5px;
+    box-sizing: border-box;
+    padding: 0px 40px 0px 15px;
+    font-size: 18px;
+    color: grey;
+    /* position: relative; */
+    display: flex;
+    align-items: center;
+
+}
+
+.header-mid-part{
+
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.noresult {
+
+    display: none;
+    justify-content: center;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.search-ul-li {
+    position: absolute;
+    z-index: 5;
+    width: 70%;
+    height: 400px;
+    overflow: scroll;
+    overflow-x: hidden;
+    background-color: white;
+    margin-top: 50px;
+
+    display: none;
+    
+
+
+
+
+}
+
+
+
+.header {
+
+    width: 100%;
+    height: 73px;
+    background-color: #912BBC;
+    display: flex;
+    align-items: center;
+    padding: 0px 20px 0px 20px;
+    box-sizing: border-box;
+}
+
+.header-wrap {
+    display: flex;
+    align-items: center;
+    flex-basis:200px;
+   
+    
+}
+ 
+
+.login {
+
+    
+  
+
+
+}
+.login_div{
+
+    margin:0px 20px 0px 20px;
+    color: white;
+    cursor: pointer;
+    
+    height:50px;
+      display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.icons_div{
+
+   display: flex;
+   justify-content: end;
+   align-items: center;
+   right: 0px;
+   flex:1;
+
+
+}
+.main_login2{
+display:none;
+
+}
+.login_div2{
+
+    color:white;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    
+    font-size: 25px;
+    width:10%;
+    margin-right: 1%;
+    display:none;
+}
+.login_div:hover{
+    color: #F0EBE3;
+}
+
+.fa-solid.fa-user:hover{
+    color:#F0EBE3;
+}
+.fa-solid.fa-cart-shopping:hover{
+
+    color:#F0EBE3;
+}
+
+.heading-main {
+    color: white;
+   
+    cursor: pointer;
+    box-sizing: border-box;
+    font-size: 35px;
+    font-weight:950;
+    
+   
+    
+
+}
+.heading-main:hover{
+
+    color: #F0EBE3;
+}
+.fa-cart-shopping{
+
+    font-size: 30px;
+    color: white;
+    margin-left: 2%;
+}
+.my_orders{
+
+    color:white;
+    margin:0px 20px 0px 20px;
+}
+.cart-number{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    margin-left: 15px;
+    margin-top: -10px;
+    background-color:black;
+    font-size: 20px;
+    color:white;
+
+}
+.cart-div{
+    margin:0px 20px 0px 20px;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    margin-right: 120px;
+}
+
+
+.header2 {
+    width: 100%;
+    height: 80px;
+    background-color:magenta;
+    justify-content: center;
+
+    border-top: 1px solid grey;
+align-items: center;
+    display: none;
+}
+
+.search-bar2 {
+    width: 70%;
+    height: 50px;
+    border-radius: 3px;
+    outline: none;
+    border: none;
+    padding: 5px;
+    box-sizing: border-box;
+    padding-left: 20px;
+    font-size: 20px;
+    color: grey;
+    display: none;
+
+}
+
+/* .header-last-part{
+
+    width: 300px;
+    display: flex;
+    height: 500px;
+   
+} */
+.fa-solid.fa-magnifying-glass{
+    position: absolute;
+    font-size: 20px;
+    
+    top:15px;
+    right: 17%;
+    
+}
+.search-bar-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+.search-ul{
+    width: 100%;
+}
+
+/* .fa-regular.fa-user{
+
+    display: none;
+    color: white;
+    font-size: 30px;
+    width:10%;
+    
+    justify-content: center;
+} */
+.search-li{
+    width: 100%;
+}
+.search-bar2-main-div{
+    width: 70%;
+    position: relative;
+    display: flex ;
+    justify-content: center;
+}
+.search-bar2{
+    width: 100%;
+}
+.yes{
+    display: none;
+}
+.profilehov{
+    position: absolute;
+    z-index:2 ;
+    transform: translateX(-43%);
+    margin-top: 0px;
+    
+}
+.loginhide{
+    display: none;
+}
+.profile-main-div{
+
+    position: relative;
+    
+}
+.profilepic{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    height: 35px;
+    width: 35px;
+    background-color: green;
+    color:white;
+    margin:0px 20px 0px 20px;
+}
+.profilepic:hover{
+
+    
+    cursor: pointer;
+}
+.my_orders:hover{
+    color: #F0EBE3;
+}
+
+
+@media only screen and (max-width:300px){
+    .my_orders,.profilepic,.cart-div,.login_div{
+        margin:3px;
+
+    }
+    .my_orders{
+        font-size: 12px;
+    }
+    .fa-solid.fa-cart-shopping{
+        font-size: 20px;
+    }
+    .profilepic{
+        height: 30px;
+        width: 30px;
+    }
+    .cart-number{
+
+        height: 15px;
+        width: 15px;
+    }
+    
+    
+
+}
+@media only screen and (max-width:700px) {
+    .search-bar {
+
+        display: none;
+
+    }
+    .my_orders,.profilepic,.cart-div,.login_div{
+        margin:5px;
+
+    }
+    
+    .header-mid-part{
+
+        display: none;
+    }
+    .profilehov{
+        
+        transform: translateX(-70%);
+        
+    }
+
+    .extra-div {
+        display: none;
+    }
+
+    .search-bar2 {
+
+        display: block;
+        width: 100%;
+        position: relative;
+
+    }
+
+    .header2 {
+        display: flex;
+        flex-direction: column;
+        height: 70px;
+    }
+
+    .heading-main {
+
+        font-size: 15px;
+    }
+
+    .search-ul-li2 {
+
+        position: absolute;
+width: 100%;
+        height: 300px;
+        overflow: scroll;
+        background-color: white;
+z-index: 5;
+        display: none;
+        box-sizing: border-box;
+
+    }
+    .header{
+
+        height: 60px;
+    }
+
+
+
+}
+
+@media only screen and (max-width:1000px) {
+
+    .cart-div{
+
+        margin-right: 0px;
+    }
+
+
+    .search-bar{
+        display: none;
+    }
+    .header2{
+        display: flex;
+    }
+    .search-bar2{
+        display: block;
+    }
+    .login{
+        width: 20%;
+    }
+    .login_div2{
+        display: flex;
+    } 
+    .main_login2{
+
+        display: flex;
+    }
+    .main_login1{
+        display:none;
+    }
+    
+    .login{
+        display: none;
+    }
+    
+    .fa-solid.fa-magnifying-glass{
+        display: none;
+    }
+    .fa-solid.fa-magnifying-glass.searchIcon2{
+        display: flex;
+    }
+    
+}

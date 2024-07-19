@@ -1,0 +1,101 @@
+.nav-main{
+
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    margin-bottom: 8px;
+    
+}
+.nav-sub{
+    
+    width: 20%;
+    display: flex;
+    justify-content: space-around;
+    /* padding: 2px; */
+    border-radius: 10px;
+    box-shadow:2px 2px 8px grey;
+
+}
+.vertical{
+
+    border-left: 1px solid grey;
+    box-shadow: 1px 1px 5px grey;
+    border-radius: 15px;
+}
+
+
+
+.madina,.all{
+width: 100%;
+height: 25px;
+margin: 5px 0px;
+border-radius: 2px;
+font-size: 15px;
+display: flex;
+justify-content: center;
+box-sizing: border-box;
+
+
+}
+.set{
+    width: 50%;
+    
+}
+.set.active{
+
+    background-color:#912BBC;
+    color:white;
+    
+}
+.set.active.left-active{
+    border-radius: 10px 0px 0px 10px;
+
+}
+.set.active.right-active{
+border-radius:0px 10px 10px 0px;
+}
+
+@media only screen and (max-width:1000px){
+
+    .nav-sub{
+        width: 25%;
+    }
+}
+
+@media only screen and (max-width:800px){
+
+    .nav-sub{
+        width: 30%;
+        
+
+    }
+    .madina,.all{
+        font-size: 12px;
+        height: 18px;
+    }
+    
+}
+@media only screen and (max-width:500px){
+
+    .nav-sub{
+        width: 46%;
+        /* padding:1.5px; */
+        
+        
+    }
+    .madina,.all{
+
+        font-size: 12px;
+        height: 15px;
+    }
+}
+@media only screen and (max-width:319px) {
+    
+
+    .nav-sub{
+        width: 50%;
+        /* padding:1px; */
+        
+        
+    }
+}

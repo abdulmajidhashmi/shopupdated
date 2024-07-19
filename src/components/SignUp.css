@@ -1,0 +1,144 @@
+.signup-main-div{
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100%;
+    position: absolute;
+    
+}
+.register_main_div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.redcol{
+
+    border-color: red !important;
+}
+.validation_error{
+
+    color:red;
+}
+.formsubmitted{
+
+    color:green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 40px;
+    background-color: lightgreen;
+    box-shadow: grey 2px 2px 5px ;
+    border-radius: 5px;
+}
+
+.signup-div{
+
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between
+}
+
+.firstname{
+
+    width: 50%;
+    box-sizing: border-box;
+    margin:3px 2px 3px 0px;
+
+    height: 40px;
+  
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid grey;
+    padding-left: 10px;
+   
+    
+    
+    
+}
+.surname{
+    width: 50%;
+    box-sizing: border-box;
+    margin:3px 0px 3px 2px;
+    height: 40px;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid grey;
+    padding-left: 10px;
+   
+    
+    
+
+    
+}
+.nameandsurname{
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+  
+    
+    
+    
+ 
+}
+.email{
+    width:300px;
+    box-sizing: border-box;
+
+}
+.password{
+    width:300px;
+    box-sizing: border-box;
+}
+.confirmpassword{
+    width:300px;
+    box-sizing: border-box;
+}
+.existinguser{
+
+    width:300px;
+    background-color: orange;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    color: white;
+    margin: 7px 0px;
+}
+.signup{
+
+    width:300px;
+    background-color: rgb(66, 183, 42);
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    margin: 7px 0px 2px 0px;
+    color:white;
+}
+.inputs{
+
+    height: 40px;
+    margin: 3px 0px;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid grey;
+    padding-left: 10px;
+    box-sizing: border-box;
+}
+
+.line-div{
+   
+    display: flex;
+    justify-content: center;
+    margin:15px 0px;
+}
+.line{
+    border-bottom :1px solid grey;
+    width: 300px;
+}

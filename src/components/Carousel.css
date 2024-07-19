@@ -1,0 +1,132 @@
+/* Main container styling */
+.main-container {
+    max-width: 100%;
+    position: relative;
+    margin-top: 10px;
+    border-radius: 15px;
+    
+    
+  }
+  
+  
+  /* Slider container styling */
+  .slider-container {
+    max-width: 100%;
+    border-radius: 15px;
+    position: relative;
+    left:50%;
+    transform: translate(-50%);
+    outline: none;
+  }
+  
+  .slider-container *:focus {
+    outline: none;
+  }
+  /* Image styling */
+  .images {
+    width: 94%;
+    max-height: 350px; /* Adjust the maximum height as needed */
+    height: auto;
+    border-radius: 10px;
+    outline: none;
+    margin:0 auto;
+    
+  
+  }
+  /* .slider-container .slick-slide {
+    display: flex;
+    justify-content: center; 
+  } */
+
+  
+  /* Arrow styling */
+.slick-prev:before,
+.slick-next:before {
+  font-size: 30px; /* Adjust the size of the arrow icons */
+  color: white; /* Change the color of the arrow icons */
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Add a drop shadow to the arrow icons */
+}
+
+
+
+
+  /* Arrow styling */
+  .slick-prev,
+  .slick-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    width: 35px; 
+    height: 35px; 
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    
+  }
+  
+  .slick-prev {
+    left: 4%; 
+  }
+  
+  .slick-next {
+    right: 4%;
+  }
+  
+  /* Dot styling */
+  .slick-dots {
+    position: absolute;
+    bottom: 10px; /* Adjust position as needed */
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .slick-dots li {
+    margin: 0 5px; /* Adjust spacing as needed */
+  }
+  
+  .slick-dots li button {
+    font-size: 0; /* Hide the default dot */
+    width: 10px; /* Adjust size as needed */
+    height: 10px; /* Adjust size as needed */
+    border-radius: 50%;
+    background-color: #fff; /* Adjust color as needed */
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Hide the default black dots */
+  .slick-dots li button:before {
+    display: none;
+  }
+  
+  .slick-dots li.slick-active button {
+    background-color: #000; /* Adjust active dot color as needed */
+  }
+  
+
+  @media only screen and (max-width:700px){
+
+
+    .slick-prev {
+      left: 10px; 
+    }
+    
+    .slick-next {
+      right: 10px;
+    }
+    .slick-prev:before,
+.slick-next:before {
+
+  font-size: 25px;
+}
+
+    
+  }

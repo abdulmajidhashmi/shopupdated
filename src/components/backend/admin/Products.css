@@ -17,3 +17,23 @@
    background-color: green;
    margin-top: 10px;
 }
+.upload_image{
+
+   display: flex;
+   flex-direction: column;
+}
+
+
+
+.table_div{
+
+   display: flex;
+}
+.margin{
+
+   margin:10px;
+   width:200px;
+   height: 160px;
+}
+.gr{color: green;}
+

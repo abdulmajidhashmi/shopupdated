@@ -11,5 +11,6 @@ export default configureStore({
     user:userReducer,
     order:orderReducer,
     checkout: checkoutReducer,
+    
   },
 })

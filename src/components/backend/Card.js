@@ -3,6 +3,17 @@ import './Card.css'
 const Card =({data})=>{
 
 
+  
+const [imageflag,setimageflag]=useState(false);
+
+  function showallimages(event){
+
+    setimageflag(!imageflag);
+    console.log("hi");
+
+
+  }
+
   function openEditBox(){
 
 
@@ -21,14 +32,15 @@ const Card =({data})=>{
             <p className="margin">{data.weight}</p>
             </div> */}
 
-
-
+            
+  
 
             <tr class="even:bg-blue-50">
             <td class="p-4 text-sm text-black">
-            <img className="margin" src={data.image}/>
+            <img className="margin" src={data.image} onClick={showallimages}/>
             </td>
             <td class="p-4 text-sm text-black">
+           
             {data.name}
             </td>
             <td class="p-4 text-sm text-black">

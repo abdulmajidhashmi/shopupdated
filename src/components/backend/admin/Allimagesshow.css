@@ -1,0 +1,43 @@
+.allimages_div{
+
+
+ position: absolute;
+    
+
+}
+
+.wrong{
+    
+   
+    
+    }
+    .hover_image{
+
+
+        max-width: 200px;
+        max-height: 150px;
+        height: auto;
+        width: auto;
+    }
+
+
+.images_column{
+display: flex;
+    justify-content: center;
+    align-items: center; 
+    flex-direction: column;
+
+}
+.allimages_div2{
+    height: 100vh;
+    width:100%;
+    
+    position: fixed;
+    background-color: aliceblue;
+    width: 50%;
+    height: 50%;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    
+}

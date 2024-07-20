@@ -305,7 +305,7 @@ const Header = ({ props }) => {
             <div className="header">
 
                 <div className="header-wrap">
-                    <Link to="/hrahim/"> <h1 className='heading-main'>H.RAHIM&CO.</h1></Link>
+                    <Link to="/"> <h1 className='heading-main'>H.RAHIM&CO.</h1></Link>
 
                 </div>
                 <div className='header-mid-part'>
@@ -319,7 +319,7 @@ const Header = ({ props }) => {
                                 {
                                     filteredProducts.map(data => (
 
-                                        <Link to={`/hrahim/product-detail/${data.id}`} ><li className='search-li'>
+                                        <Link to={`/product-detail/${data.id}`} ><li className='search-li'>
                                             <SearchItems data={data} />
                                         </li>
                                         </Link>
@@ -338,19 +338,19 @@ const Header = ({ props }) => {
 
                 <div className='icons_div'>
                     {user ?
-                        <Link to="/hrahim/my-orders"><p className='my_orders'>My Orders</p></Link> : null}
+                        <Link to="/my-orders"><p className='my_orders'>My Orders</p></Link> : null}
                     <div className={`${user ? "yes" : ""}`}>
-                        <div className='main_login1'> <Link to="/hrahim/login"> <div className="login_div"><h4 className="login" >Login/register</h4></div></Link></div>
+                        <div className='main_login1'> <Link to="/login"> <div className="login_div"><h4 className="login" >Login/register</h4></div></Link></div>
 
-                        <div className='main-login2'> <Link to="/hrahim/login"> <div className="login_div2"><i class="fa-regular fa-user" ></i></div></Link></div>
+                        <div className='main-login2'> <Link to="/login"> <div className="login_div2"><i class="fa-regular fa-user" ></i></div></Link></div>
                     </div>
                     {user ? <UserData /> : null}
                     <div className='cart-div'>
-                        <Link to="/hrahim/addtocart">
+                        <Link to="/addtocart">
 
                             <h1 className='cart-number'>{count}</h1>
                         </Link>
-                        <Link to="/hrahim/addtocart"><i className="fa-solid fa-cart-shopping"></i></Link>
+                        <Link to="/addtocart"><i className="fa-solid fa-cart-shopping"></i></Link>
 
 
 
@@ -370,7 +370,7 @@ const Header = ({ props }) => {
                             {
                                 filteredProducts2.map(data => (
 
-                                    <Link to={`/hrahim/product-detail/${data.id}`} ><li className='search-li'><h1>{data.productTitle}</h1></li>
+                                    <Link to={`/product-detail/${data.id}`} ><li className='search-li'><h1>{data.productTitle}</h1></li>
                                     </Link>
                                 ))
                             }

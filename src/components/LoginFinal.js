@@ -57,7 +57,7 @@ const log=()=>{
         //     window.location.reload();
         // })
       
-        navigate('/hrahim');
+        navigate('/');
         
       
        
@@ -130,7 +130,7 @@ return(
                   Sign in
                 </button>
               </div>
-                <p class="text-gray-800 text-sm !mt-8 text-center">Don't have an account? <Link to="/hrahim/register" class="text-lime-600 hover:underline ml-1 whitespace-nowrap font-semibold">Register here</Link></p>
+                <p class="text-gray-800 text-sm !mt-8 text-center">Don't have an account? <Link to="/register" class="text-lime-600 hover:underline ml-1 whitespace-nowrap font-semibold">Register here</Link></p>
             </form>
           </div>
         </div>

@@ -58,7 +58,7 @@ const RegisterFinal =()=>{
           setnaverr(true);
           setnavtext("Taking to Login page");
           if(data.data.success===true){
-               navigate('/hrahim/login');
+               navigate('/login');
             }
           
           

@@ -57,7 +57,7 @@ const log=()=>{
         //     window.location.reload();
         // })
       
-        navigate('/hrahim');
+        navigate('/');
         
       
        
@@ -109,7 +109,7 @@ const log=()=>{
                             <div className="line"></div>
                         </div>
                         <div className="create-account-div">
-                           <Link to="/hrahim/register"> <div className="create-account" >Create New Account</div></Link>
+                           <Link to="/register"> <div className="create-account" >Create New Account</div></Link>
                         </div>
                         <div className="google-login">
                             <GoogleOAuthProvider clientId="588246067705-neqf2p32vqmh6tkriieaomuir9v4o1gt.apps.googleusercontent.com">

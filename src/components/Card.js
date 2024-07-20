@@ -37,7 +37,7 @@ const { addtocart, setaddtocart } = addtocartusecontext;
        return (
               <div className="relative m-4 flex w-full max-w-64 flex-col overflow-hidden rounded-lg border border-gray-100 bg-white shadow-md">
 
-<Link to={`/hrahim/product-detail/${pro.id}`} class=" grad relative mx-3 mt-3 flex h-52 overflow-hidden rounded-xl">
+<Link to={`/product-detail/${pro.id}`} class=" grad relative mx-3 mt-3 flex h-52 overflow-hidden rounded-xl">
                     <img class="object-cover  " src={pro.image} alt="product image" />
                     <span class="absolute top-0 left-0 m-2 rounded-full bg-black px-2 text-center text-sm font-medium text-white">{(pro.mrp-pro.rate)/(pro.mrp)*100}% OFF</span>
                 </Link>

@@ -30,6 +30,7 @@ import ProtectedRoute from "./ProtectedRoute.js";
 import Checkout from './Checkout.js'
 import MyOrders from "./MyOrders.js";
 import AdminOrders from "./backend/admin/Orders.js";
+import PageNotFound from "./PageNotFound.js";
 // const router = createBrowserRouter([
 //     {
 //         path: "/hrahim/",
@@ -84,52 +85,52 @@ const App = () => {
 
         <BrowserRouter >
             <Routes>
-                <Route path="/hrahim/admin/orders" element={
+                <Route path="/admin/orders" element={
                         <>
                         <AdminOrders/>
                         </>
                 }/>
-                <Route path="/hrahim" element={
+                <Route path="/" element={
                     <>
                         <Component />
                     </>
                 } />
-                <Route path="/hrahim/my-orders" element={
+                <Route path="/my-orders" element={
                     <> <Header/><MyOrders/> </>
                 } />
 
-                <Route path="/hrahim/checkout" element={
+                <Route path="/checkout" element={
                     <>
                         <Checkout />
                     </>
                 } />
 
-                <Route path="/hrahim/admin/product" element={
+                <Route path="/admin/product" element={
                     <>
                         <Products />
                     </>
                 } />
-                <Route path="/hrahim/login" element={
+                <Route path="/login" element={
                     <>
 
                         {/* <Login/> */}
                         <LoginFinal />
                     </>
                 } />
-                <Route path="/hrahim/admin" element={
+                <Route path="/admin" element={
                     <>
 
                         <HomePage />
                     </>
                 } />
-                <Route path="/hrahim/register" element={
+                <Route path="/register" element={
                     <>
 
                         {/* <SignUp/> */}
                         <RegisterFinal />
                     </>
                 } />
-                <Route path="/hrahim/sukkary" element={
+                <Route path="/sukkary" element={
                     <>
                         <Header />
                         <SimpleSlider />
@@ -138,29 +139,32 @@ const App = () => {
                         <NavigationBar />
                     </>
                 } />
-                <Route path="/hrahim/product-detail/:id" element={
+                <Route path="/product-detail/:id" element={
                     <>
                         <Header />
                         <ProductDetail />
                     </>
                 } />
-                <Route path="/hrahim/my-account" element={
+                <Route path="/my-account" element={
                     <>
                         <MyAccountpage />
                         <NavigationBar />
                     </>
                 } />
-                <Route path="/hrahim/navbar" element={
+                <Route path="/navbar" element={
                     <>
                         <Navbar />
                         <NavigationBar />
                     </>
                 } />
-                <Route path="/hrahim/addtocart" element={
+                <Route path="/addtocart" element={
                     <>
                         <Componentaddtocart />
                     </>
                 } />
+                <Route path="*" element={
+                    
+                    <PageNotFound/>}/>
             </Routes>
         </BrowserRouter>
 

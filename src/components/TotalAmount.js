@@ -242,7 +242,7 @@ const TotalAmount = () => {
                             </div>
                         </div>
 
-                       <Link to="/hrahim/checkout"> <button class="mt-6 w-full rounded-md bg-blue-500 py-1.5 font-medium text-blue-50 hover:bg-blue-600">Check out</button>
+                       <Link to="/checkout"> <button class="mt-6 w-full rounded-md bg-blue-500 py-1.5 font-medium text-blue-50 hover:bg-blue-600">Check out</button>
                        </Link>
 
           

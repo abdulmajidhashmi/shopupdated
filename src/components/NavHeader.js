@@ -61,7 +61,7 @@ const NavHeader = () => {
         <div className='nav-main'>
             <div className='nav-sub'>
                 <NavLink
-                    to="/hrahim/"
+                    to="/"
                     end
                     className={({ isActive }) => (isActive ? 'set active left-active' : 'set')}
                 >
@@ -69,7 +69,7 @@ const NavHeader = () => {
                 </NavLink>
                 <div className='vertical'></div>
                 <NavLink
-                    to="/hrahim/sukkary"
+                    to="/sukkary"
                     className={({ isActive }) => (isActive ? 'set active right-active' : 'set')}
                 >
                     <div className='madina'>Madina Dates</div>

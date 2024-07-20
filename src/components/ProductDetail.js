@@ -244,7 +244,7 @@ const ProductDetail = () => {
 
                             </div>
                             <div class="mt-8 space-y-4">
-                                <Link to="/hrahim/addtocart"><button onClick={() => addbutton(data.id)} type="button" class="w-full px-4 py-3 bg-gray-800 hover:bg-gray-900 text-white text-sm font-bold rounded">Buy now</button></Link>
+                                <Link to="/addtocart"><button onClick={() => addbutton(data.id)} type="button" class="w-full px-4 py-3 bg-gray-800 hover:bg-gray-900 text-white text-sm font-bold rounded">Buy now</button></Link>
                                 <button onClick={() => addbutton(data.id)} type="button" class={`addtocart  ${count[data.id] ? 'addtocart-disable' : ''} w-full px-4 py-2.5 border border-gray-800 bg-transparent hover:bg-gray-50 text-gray-800 text-sm font-bold rounded`}>Add to cart</button>
                             
                             <div className={`   counters ${count[data.id] === undefined || count[data.id] === 0 ? 'counter-disable' : ''} `}>

@@ -55,7 +55,7 @@ const SignUp = () => {
             setnaverr(true);
             setnavtext("Taking to Login page");
             setTimeout(()=>{
-                navigate('/hrahim/login');
+                navigate('/login');
             },1000)
             
             

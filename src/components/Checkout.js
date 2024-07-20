@@ -65,7 +65,7 @@
 //       .catch((err) => {
 //         console.log(err);
 //       });
-//     navigate("/hrahim/my-orders");
+//     navigate("/my-orders");
 //   }
 
 //   return (
@@ -283,7 +283,7 @@ const Checkout = () => {
             .catch((err) => {
                 console.log(err);
             });
-        navigate('/hrahim/my-orders');
+        navigate('/my-orders');
     }
 
     return (

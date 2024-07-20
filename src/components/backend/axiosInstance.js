@@ -2,7 +2,7 @@ import axios from "axios";
 import store from "../store/store";
 
 export const axiosInstance = axios.create(
-
+  
     {
         // baseURL: "http://localhost:4000",
         baseURL:"https://hrahimbackend.vercel.app",

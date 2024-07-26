@@ -1,9 +1,8 @@
 import "./Products.css";
 import "./Allimagesshow.css";
 import { useRef, useState, useEffect } from "react";
-import Card from "../Card";
 import { axiosInstance } from "../axiosInstance";
-import Allimagesshow from "./Allimagesshow";
+import { message} from "antd";
 const Products = () => {
   const nameRef = useRef();
   const priceRef = useRef();
@@ -14,14 +13,14 @@ const Products = () => {
   const image3Ref = useRef();
   const image4Ref = useRef();
   const descriptionRef = useRef();
+  const categoryRef=useRef();
 
   const [product, setProduct] = useState([]);
   const [flag, setflag] = useState(false);
-  const [deleteflag,setdeleteflag]=useState(false);
-  const [message, setmessage] = useState("");
+  const [deleteflag, setdeleteflag] = useState(false);
   const [edit, setedit] = useState(false);
-  const [deldata,setdeldata]=useState();
-  const [refresh,setrefresh]=useState(false);
+  const [deldata, setdeldata] = useState();
+  const [refresh, setrefresh] = useState(false);
   const initialvalues = {
     name: "",
     price: "",
@@ -32,14 +31,15 @@ const Products = () => {
     image3: "",
     image4: "",
     description: "",
-    id:""
+    id: "",
+    category:"",
   };
   const [editvalue, seteditvalue] = useState(initialvalues);
-  
+
   const [editchanges, seteditchanges] = useState(initialvalues);
 
   function submitted(event) {
-    if (
+    if (categoryRef.current.value &&
       nameRef.current.value &&
       priceRef.current.value &&
       mrpRef.current.value &&
@@ -60,6 +60,7 @@ const Products = () => {
         image2: image2Ref.current.value,
         image3: image3Ref.current.value,
         image4: image4Ref.current.value,
+        category:categoryRef.current.value,
       };
 
       console.log(productobj);
@@ -69,7 +70,14 @@ const Products = () => {
         .then(function (response) {
           console.log(response.data);
 
-          setmessage(response.data);
+          
+          if (response.data.success === true) {
+            message.success(response.data.message);
+          } else {
+            message.error(response.data.message);
+          }
+          
+        
 
           if (response.data) {
             nameRef.current.value = "";
@@ -81,6 +89,7 @@ const Products = () => {
             image3Ref.current.value = "";
             image4Ref.current.value = "";
             descriptionRef.current.value = "";
+            categoryRef.current.value="";
           }
 
           setrefresh(!refresh);
@@ -97,8 +106,10 @@ const Products = () => {
       .get("/productcreate")
       .then((data) => {
         console.log(data.data);
-        seteditvalue(data.data);
-        setProduct(data.data);
+        seteditvalue(data.data.data);
+        setProduct(data.data.data);
+        
+        
       })
       .catch((err) => {
         console.log(err);
@@ -145,43 +156,54 @@ const Products = () => {
   }
 
   const doneedit = async () => {
- console.log(editchanges);
+    console.log(editchanges);
     try {
-      const response = await axiosInstance.put("/productcreate/edit", editchanges);
+      const response = await axiosInstance.put(
+        "/productcreate/edit",
+        editchanges
+      );
       setedit(false);
-      console.log(response.data.message);
+      console.log(response.data);
+      if (response.data.success === true) {
+        message.success(response.data.message);
+      } else {
+        message.error(response.data.message);
+      }
+      
       setrefresh(!refresh);
     } catch (err) {
       console.log("error");
     }
   };
 
-  function deleteconfirm(value){
+  function deleteconfirm(value) {
     setdeldata(value);
-      setdeleteflag(true);
-      
+    setdeleteflag(true);
   }
 
-  const deleteprod=async()=>{
+  const deleteprod = async () => {
     console.log(deldata);
-    try{
-    const response=await axiosInstance.delete('/productcreate/delete',{data:{_id:deldata._id}});
-        console.log(response.data);
-        setdeleteflag(false);
-        setrefresh(!refresh);
-    }catch(err){
-
+    try {
+      const response = await axiosInstance.delete("/productcreate/delete", {
+        data: { _id: deldata._id },
+      });
+      console.log(response.data);
+      if (response.data.success === true) {
+        message.success(response.data.message);
+      } else {
+        message.error(response.data.message);
+      }
+      setdeleteflag(false);
+      setrefresh(!refresh);
+    } catch (err) {
       console.log(err.data);
     }
-
-    
-
-
-  }
+  };
   return (
     <>
 
-{deleteflag ? (
+  
+      {deleteflag ? (
         <div class="fixed flex items-center justify-center w-full h-full">
           <div
             class="bg-white max-w-sm mx-auto my-2 shadow-[0_3px_16px_-4px_rgba(197,182,255)] rounded-xl font-[sans-serif]"
@@ -211,7 +233,6 @@ const Products = () => {
           </div>
         </div>
       ) : null}
-
 
       {edit ? (
         <div className="edit_dialog_box">
@@ -278,6 +299,14 @@ const Products = () => {
             name="image4"
             onChange={editchange}
             value={editchanges.image4}
+          />
+          <input
+            type="text"
+            className="dialog_input"
+            placeholder="Enter category"
+            name="category"
+            onChange={editchange}
+            value={editchanges.category}
           />
           <input
             type="text"
@@ -370,6 +399,12 @@ const Products = () => {
             placeholder="Enter product weight"
             class="w-full rounded-md py-3 px-4 text-gray-800 bg-gray-100 focus:bg-transparent text-sm outline-blue-500"
           />
+          <input
+            type="text"
+            ref={categoryRef}
+            placeholder="Enter product category"
+            class="w-full rounded-md py-4 px-4 text-gray-800 bg-gray-100 focus:bg-transparent text-sm pt-3 outline-blue-500"
+          />
           <textarea
             ref={descriptionRef}
             placeholder="Enter product Description"
@@ -407,7 +442,7 @@ const Products = () => {
           >
             Send
           </button>
-          <h1>{message}</h1>
+          
         </form>
       </div>
 
@@ -438,7 +473,7 @@ const Products = () => {
             </thead>
 
             <tbody class="whitespace-nowrap">
-              {product.map((data) => (
+              {product.length>0?(product.map((data) => (
                 <>
                   {/* <div className='table_div'>
                  <img className="margin" src={data.image}/>
@@ -483,7 +518,11 @@ const Products = () => {
                           />
                         </svg>
                       </button>
-                      <button onClick={()=>deleteconfirm(data)} class="mr-4" title="Delete">
+                      <button
+                        onClick={() => deleteconfirm(data)}
+                        class="mr-4"
+                        title="Delete"
+                      >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           class="w-5 fill-red-500 hover:fill-red-700"
@@ -502,7 +541,7 @@ const Products = () => {
                     </td>
                   </tr>
                 </>
-              ))}
+              ))):null}
             </tbody>
           </table>
         </div>

@@ -73,13 +73,7 @@
 }
  
 
-.login {
 
-    
-  
-
-
-}
 .login_div{
 
     margin:0px 20px 0px 20px;
@@ -206,17 +200,10 @@ align-items: center;
 
 }
 
-/* .header-last-part{
 
-    width: 300px;
-    display: flex;
-    height: 500px;
-   
-} */
 .fa-solid.fa-magnifying-glass{
     position: absolute;
     font-size: 20px;
-    
     top:15px;
     right: 17%;
     

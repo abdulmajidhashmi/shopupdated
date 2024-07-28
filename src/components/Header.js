@@ -311,7 +311,7 @@ const Header = ({ props }) => {
                 <div className='header-mid-part'>
                     <div className='search-bar-container'>
                         <input className='search-bar' type="text" placeholder='Search for products' onChange={searchfield} onKeyDown={onkeysearch} />
-                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <i class="fa-solid fa-magnifying-glass searchone"></i>
 
                         <div className='search-ul-li' ref={searchit}>
 

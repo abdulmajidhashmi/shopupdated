@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { useSelector,useDispatch } from "react-redux";
 import { setToken ,userdata} from "./reducers/user.reducer";
 
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const UserData = ()=>{
 
@@ -70,7 +70,7 @@ const UserData = ()=>{
                             <div class="flex gap-2 px-2">
                                 <button
                                     class="flex-1 rounded-full bg-blue-600 dark:bg-blue-800 text-white dark:text-white antialiased font-bold hover:bg-blue-800 dark:hover:bg-blue-900 px-4 py-2">
-                                    View
+                                   <Link to="/my-account">View</Link>
                                 </button>
                                 <button onClick={logout}
                                     class="logout flex-1 rounded-full border-2 border-gray-400 dark:border-gray-700 font-semibold text-black dark:text-white px-4 py-2">

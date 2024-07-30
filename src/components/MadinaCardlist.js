@@ -4,6 +4,7 @@ import { axiosInstance } from "./backend/axiosInstance";
 import './Main.css'
 import './MadinaCardlist.css';
 import sukkary from './../images/sukkary.jpg'
+import CardshimmeringEffect from "./CardshimmeringEffect";
 
 
 
@@ -11,6 +12,9 @@ const MadinaCardlist = () => {
 
 
     const [productdata,setproductdata]=useState([]);
+    const initialvalues=[1,2,3,4,5,6];
+    const [arr,setarr]=useState(initialvalues);
+    const [loading,setloading]=useState(false);
 
     const getproducts=async()=>{
 try{
@@ -21,17 +25,20 @@ try{
         if(data){
         const res =data.filter(prod=> prod.category.toLowerCase().includes("madina"));
         setproductdata(res);
+        setloading(false);
        
         }
     }
     catch(err){
 
         console.log(err);
+        setloading(false);
     }
 
 }
 
     useEffect(()=>{
+        setloading(true);
         getproducts();
     },[])
 
@@ -42,11 +49,11 @@ try{
     return (
 
         <div className='card-container'>
-            {
-                productdata.map(prod => (
+            {loading?(arr.map(()=>(<CardshimmeringEffect/>))):(productdata.map(prod => (
 
-                    <ProductCard pro={prod} />
-                ))
+<ProductCard pro={prod} />
+)))
+                
             }
 
 

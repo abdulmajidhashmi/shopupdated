@@ -91,6 +91,9 @@ const ProductList = ({ cartlength }) => {
     const [currentPage, setCurrentPage] = useState(1);
     const [dataPerPage] = useState(10);
     const [currentData, setCurrentData] = useState([]);
+    const [loading,setloading]=useState(false);
+    const initialvalues=[1,2,3,4,5,6];
+    const [arr,setarr]=useState(initialvalues);
 
     const addtocartusecontext = useContext(addtocartcontext);
     const { addtocart } = addtocartusecontext;
@@ -105,17 +108,20 @@ try{
         if(data){
         const res =data.filter(prod=> prod.category.toLowerCase().includes("dates"));
         setproductdata(res);
+        setloading(false);
        
         }
     }
     catch(err){
 
         console.log(err);
+        setloading(false);
     }
 
 }
 
     useEffect(()=>{
+        setloading(true);
         getproducts();
     },[])
 
@@ -131,21 +137,21 @@ try{
 
     const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
-    const arr =[1,2,3,4,5];
+    
 
     return (
-        <>
-            <div className='card-container'>
-                {currentData?currentData.map((prod) => (
-                    <ProductCard key={prod._id} pro={prod} />
-                )):arr.map((car)=>(<CardshimmeringEffect/>))}
+        <><div className='card-container'>{loading?(arr.map(()=>(<CardshimmeringEffect/>))):(<><div className='card-container'>
+        {currentData.map((prod) => (
+            <ProductCard key={prod._id} pro={prod} />
+        ))}
+    </div>
+  <Pagination 
+        dataPerPage={dataPerPage} 
+        totalData={productdata.length} 
+        paginate={paginate} 
+        currentPage={currentPage}
+    /> </>) }
             </div>
-          {currentData?(<Pagination 
-                dataPerPage={dataPerPage} 
-                totalData={productdata.length} 
-                paginate={paginate} 
-                currentPage={currentPage}
-            />):null}  
         </>
     );
 };

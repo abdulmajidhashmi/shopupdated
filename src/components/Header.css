@@ -231,6 +231,7 @@ align-items: center;
 } */
 .search-li{
     width: 100%;
+    display: inline-flex;
 }
 .search-bar2-main-div{
     width: 70%;
@@ -286,6 +287,13 @@ align-items: center;
     right: 5%;
     top:50%;
     transform: translateY(-50%);
+}
+.search-ui{
+
+    max-height: 40px;
+    max-width: 40px;
+    min-width: 40px;
+    min-height: 40px;
 }
 @media only screen and (max-width:330px){
 
@@ -380,6 +388,7 @@ width: 100%;
 z-index: 5;
         display: none;
         box-sizing: border-box;
+        margin-top: 50px;
 
     }
     .header{

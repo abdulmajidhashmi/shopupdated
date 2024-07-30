@@ -7,7 +7,7 @@ import checkoutReducer from '../reducers/checkout.reducer'
 export default configureStore({
   reducer: {
 
-    addToCart:addToCartReducer,
+    cart:addToCartReducer,
     user:userReducer,
     order:orderReducer,
     checkout: checkoutReducer,

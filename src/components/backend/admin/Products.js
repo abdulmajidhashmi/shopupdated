@@ -487,6 +487,7 @@ const Products = () => {
                     <td class="p-4 text-sm text-black">
                       <img
                         className="margin"
+                        loading="lazy"
                         src={data.image1}
                         alt="image"
                         key={data.id}

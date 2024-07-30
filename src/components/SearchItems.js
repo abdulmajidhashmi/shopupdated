@@ -4,8 +4,8 @@ const SearchItems=({data})=>{
 return (
 
     <div className='search-image-div'>
-        <img className="search-img" src={data.image}/>
-    <h4 className="search-heading">{data.productTitle}</h4>
+        <img className="search-img" src={data.image1}/>
+    <h4 className="search-heading">{data.name}</h4>
     
     </div>
 )

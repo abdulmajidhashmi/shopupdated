@@ -28,16 +28,16 @@ function SimpleSlider() {
     <div className="slider-container">
       <Slider {...settings}>
         <div>
-          <img src={page1} className="images" />
+          <img src={page1} loading='lazy' className="images" />
         </div>
         <div>
-          <img src={page2} className="images" />
+          <img src={page2} loading='lazy' className="images" />
         </div>
         <div>
-          <img src={page3} className="images" />
+          <img src={page3} loading='lazy' className="images" />
         </div>
         <div>
-          <img src={page4} className="images" />
+          <img src={page4} loading='lazy' className="images" />
         </div>
         
         

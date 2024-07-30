@@ -1,0 +1,42 @@
+/* Shimmering Effect */
+@keyframes shimmer {
+    0% {
+      background-position: -100% 0;
+    }
+    100% {
+      background-position: 100% 0;
+    }
+  }
+  
+  .shimmer-wrapper {
+    position: relative;
+    overflow: hidden;
+    
+  }
+  
+  .shimmer {
+   
+    background: linear-gradient(to right, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    height: 100%;
+    width: 85%;
+    display: inline-block;
+    text-align: center;
+    margin: 0.9rem;
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
+  
+
+  .card-placeholder {
+    
+    
+   
+    background: #f6f7f8; /* Fallback background color */
+  }
+  
+  .card-placeholder .shimmer {
+    height: 100%;
+  }
+  

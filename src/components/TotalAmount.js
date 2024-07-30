@@ -1,186 +1,38 @@
 import './TotalAmount.css'
 import { useDispatch, useSelector } from 'react-redux';
-import kimia from './../images/kimia.jpeg'
-import { useEffect } from 'react';
+import { axiosInstance } from './backend/axiosInstance';
+import { useEffect,useState } from 'react';
 import { calculatetotal } from './reducers/addToCart.reducer'
 import { Link } from 'react-router-dom';
 
 
-const productData = [{
-    id: 1,
-    page: 1,
-    totalpages: 2,
-    image: `${kimia}`,
-    productTitle: "kimia",
-    rate: "150",
-    mrp: "500",
-    weight: "500g",
-},
-{
-    id: 2,
-    page: 1,
-    totalpages: 2,
-    image: `${kimia}`,
-    productTitle: "kimia",
-    rate: "150",
-    mrp: "500",
-    weight: "500g",
-},
-{
-    id: 3,
-    page: 1,
-    totalpages: 2,
-    image: `${kimia}`,
-    productTitle: "kimia",
-    rate: "150",
-    mrp: "500",
-    weight: "500g",
-},
-{
-    id: 4,
-    page: 1,
-    totalpages: 2,
-    image: `${kimia}`,
-    productTitle: "kimia",
-    rate: "150",
-    mrp: "500",
-    weight: "500g",
-},
-{
-    id: 5,
-    page: 1,
-    totalpages: 2,
-    image: `${kimia}`,
-    productTitle: "kimia",
-    rate: "150",
-    mrp: "500",
-    weight: "500g",
-},
-{
-    id: 6,
-    page: 1,
-    totalpages: 2,
-    image: `${kimia}`,
-    productTitle: "kimia",
-    rate: "150",
-    mrp: "500",
-    weight: "500g",
-},
-{
-    id: 7,
-    page: 1,
-    totalpages: 2,
-    image: `${kimia}`,
-    productTitle: "kimia",
-    rate: "150",
-    mrp: "500",
-    weight: "500g",
-},
-{
-    id: 8,
-    page: 1,
-    totalpages: 2,
-    image: `${kimia}`,
-    productTitle: "kimia",
-    rate: "150",
-    mrp: "500",
-    weight: "500g",
-},
-{
-    id: 9,
-    page: 1,
-    totalpages: 2,
-    image: `${kimia}`,
-    productTitle: "kimia",
-    rate: "150",
-    mrp: "500",
-    weight: "500g",
-},
-{
-    id: 10,
-    page: 1,
-    totalpages: 2,
-    image: `${kimia}`,
-    productTitle: "kimia",
-    rate: "150",
-    mrp: "500",
-    weight: "500g",
-},
-{
-    id: 11,
-    page: 2,
-    totalpages: 2,
-    image: `${kimia}`,
-    productTitle: "kimia",
-    rate: "150",
-    mrp: "500",
-    weight: "500g",
-},
-{
-    id: 12,
-    page: 2,
-    totalpages: 2,
-    image: `${kimia}`,
-    productTitle: "kimia",
-    rate: "150",
-    mrp: "500",
-    weight: "500g",
-},
-{
-    id: 13,
-    page: 2,
-    totalpages: 2,
-    image: `${kimia}`,
-    productTitle: "kimia",
-    rate: "150",
-    mrp: "500",
-    weight: "500g",
-},
-{
-    id: 14,
-    page: 2,
-    totalpages: 2,
-    image: `${kimia}`,
-    productTitle: "kimia",
-    rate: "150",
-    mrp: "500",
-    weight: "500g",
-},
-{
-    id: 15,
-    page: 2,
-    totalpages: 2,
-    image: `${kimia}`,
-    productTitle: "kimia",
-    rate: "150",
-    mrp: "500",
-    weight: "500g",
-},
-{
-    id: 16,
-    page: 2,
-    totalpages: 2,
-    image: `${kimia}`,
-    productTitle: "kimia",
-    rate: "150",
-    mrp: "500",
-    weight: "500g",
-},
-{
-    id: 17,
-    page: 2,
-    totalpages: 2,
-    image: `${kimia}`,
-    productTitle: "kimia",
-    rate: "150",
-    mrp: "500",
-    weight: "500g",
-},]
 const TotalAmount = () => {
 
+    const [productdata,setproductdata]=useState([]);
 
-    const count = useSelector((state) => state.addToCart.value);
-    const totalamount = useSelector((state) => state.addToCart.total);
+    const getproducts=async()=>{
+try{
+       const response= await axiosInstance.get('/productcreate/prod');
+       const data=response.data.data;
+       
+       
+        
+        setproductdata(data);
+       
+        
+    }
+    catch(err){
+
+        console.log(err);
+    }
+
+}
+
+    useEffect(()=>{
+        getproducts();
+    },[])
+    const count = useSelector((state) => state.cart.value);
+    const totalamount = useSelector((state) => state.cart.total);
 
 
 
@@ -193,9 +45,9 @@ const TotalAmount = () => {
         let total = 0;
         let mrptotal = 0;
         for (const proid in count) {
-            const product = productData.find((item) => item.id === parseInt(proid));
+            const product = productdata.find((item) => item._id === proid);
             if (product) {
-                total += product.rate * count[proid];
+                total += product.price * count[proid];
                 mrptotal += product.mrp * count[proid];
             }
         }

@@ -6,176 +6,7 @@
 // import Pagination from "./Pagination";
 // import { addtocartcontext } from './../context/Addtocartcontext';
 
-// const productData = [{
-//     id: 1,
-//     page: 1,
-//     totalpages: 2,
-//     image: `${kimia}`,
-//     productTitle: "kimia",
-//     rate: "150",
-//     mrp: "500",
-//     weight: "500g",
-// },
-// {
-//     id: 2,
-//     page: 1,
-//     totalpages: 2,
-//     image: `${kimia}`,
-//     productTitle: "kimia",
-//     rate: "150",
-//     mrp: "500",
-//     weight: "500g",
-// },
-// {
-//     id: 3,
-//     page: 1,
-//     totalpages: 2,
-//     image: `${kimia}`,
-//     productTitle: "kimia",
-//     rate: "150",
-//     mrp: "500",
-//     weight: "500g",
-// },
-// {
-//     id: 4,
-//     page: 1,
-//     totalpages: 2,
-//     image: `${kimia}`,
-//     productTitle: "kimia",
-//     rate: "150",
-//     mrp: "500",
-//     weight: "500g",
-// },
-// {
-//     id: 5,
-//     page: 1,
-//     totalpages: 2,
-//     image: `${kimia}`,
-//     productTitle: "kimia",
-//     rate: "150",
-//     mrp: "500",
-//     weight: "500g",
-// },
-// {
-//     id: 6,
-//     page: 1,
-//     totalpages: 2,
-//     image: `${kimia}`,
-//     productTitle: "kimia",
-//     rate: "150",
-//     mrp: "500",
-//     weight: "500g",
-// },
-// {
-//     id: 7,
-//     page: 1,
-//     totalpages: 2,
-//     image: `${kimia}`,
-//     productTitle: "kimia",
-//     rate: "150",
-//     mrp: "500",
-//     weight: "500g",
-// },
-// {
-//     id: 8,
-//     page: 1,
-//     totalpages: 2,
-//     image: `${kimia}`,
-//     productTitle: "kimia",
-//     rate: "150",
-//     mrp: "500",
-//     weight: "500g",
-// },
-// {
-//     id: 9,
-//     page: 1,
-//     totalpages: 2,
-//     image: `${kimia}`,
-//     productTitle: "kimia",
-//     rate: "150",
-//     mrp: "500",
-//     weight: "500g",
-// },
-// {
-//     id: 10,
-//     page: 1,
-//     totalpages: 2,
-//     image: `${kimia}`,
-//     productTitle: "kimia",
-//     rate: "150",
-//     mrp: "500",
-//     weight: "500g",
-// },
-// {
-//     id: 11,
-//     page: 2,
-//     totalpages: 2,
-//     image: `${kimia}`,
-//     productTitle: "kimia",
-//     rate: "150",
-//     mrp: "500",
-//     weight: "500g",
-// },
-// {
-//     id: 12,
-//     page: 2,
-//     totalpages: 2,
-//     image: `${kimia}`,
-//     productTitle: "kimia",
-//     rate: "150",
-//     mrp: "500",
-//     weight: "500g",
-// },
-// {
-//     id: 13,
-//     page: 2,
-//     totalpages: 2,
-//     image: `${kimia}`,
-//     productTitle: "kimia",
-//     rate: "150",
-//     mrp: "500",
-//     weight: "500g",
-// },
-// {
-//     id: 14,
-//     page: 2,
-//     totalpages: 2,
-//     image: `${kimia}`,
-//     productTitle: "kimia",
-//     rate: "150",
-//     mrp: "500",
-//     weight: "500g",
-// },
-// {
-//     id: 15,
-//     page: 2,
-//     totalpages: 2,
-//     image: `${kimia}`,
-//     productTitle: "kimia",
-//     rate: "150",
-//     mrp: "500",
-//     weight: "500g",
-// },
-// {
-//     id: 16,
-//     page: 2,
-//     totalpages: 2,
-//     image: `${kimia}`,
-//     productTitle: "kimia",
-//     rate: "150",
-//     mrp: "500",
-//     weight: "500g",
-// },
-// {
-//     id: 17,
-//     page: 2,
-//     totalpages: 2,
-//     image: `${kimia}`,
-//     productTitle: "kimia",
-//     rate: "150",
-//     mrp: "500",
-//     weight: "500g",
-// },]
+
 
 
 // const ProductList = ({ cartlength }) => {
@@ -250,177 +81,10 @@ import { addtocartcontext } from "./../context/Addtocartcontext";
 import kimia from "./../images/kimia.jpeg";
 import './Main.css';
 import './CardList.css';
+import { axiosInstance } from "./backend/axiosInstance";
+import CardshimmeringEffect from "./CardshimmeringEffect";
 
-const productData = [{
-    id:1 ,
-    page: 1,
-    totalpages: 2,
-    image: `${kimia}`,
-    productTitle: "kimia",
-    rate: "150",
-    mrp: "500",
-    weight: "500g",
-},
-{
-    id: 2,
-    page: 1,
-    totalpages: 2,
-    image: `${kimia}`,
-    productTitle: "kimia",
-    rate: "150",
-    mrp: "500",
-    weight: "500g",
-},
-{
-    id: 3,
-    page: 1,
-    totalpages: 2,
-    image: `${kimia}`,
-    productTitle: "kimia",
-    rate: "150",
-    mrp: "500",
-    weight: "500g",
-},
-{
-    id: 4,
-    page: 1,
-    totalpages: 2,
-    image: `${kimia}`,
-    productTitle: "kimia",
-    rate: "150",
-    mrp: "500",
-    weight: "500g",
-},
-{
-    id: 5,
-    page: 1,
-    totalpages: 2,
-    image: `${kimia}`,
-    productTitle: "kimia",
-    rate: "150",
-    mrp: "500",
-    weight: "500g",
-},
-{
-    id: 6,
-    page: 1,
-    totalpages: 2,
-    image: `${kimia}`,
-    productTitle: "kimia",
-    rate: "150",
-    mrp: "500",
-    weight: "500g",
-},
-{
-    id: 7,
-    page: 1,
-    totalpages: 2,
-    image: `${kimia}`,
-    productTitle: "kimia",
-    rate: "150",
-    mrp: "500",
-    weight: "500g",
-},
-{
-    id: 8,
-    page: 1,
-    totalpages: 2,
-    image: `${kimia}`,
-    productTitle: "kimia",
-    rate: "150",
-    mrp: "500",
-    weight: "500g",
-},
-{
-    id: 9,
-    page: 1,
-    totalpages: 2,
-    image: `${kimia}`,
-    productTitle: "kimia",
-    rate: "150",
-    mrp: "500",
-    weight: "500g",
-},
-{
-    id: 10,
-    page: 1,
-    totalpages: 2,
-    image: `${kimia}`,
-    productTitle: "kimia",
-    rate: "150",
-    mrp: "500",
-    weight: "500g",
-},
-{
-    id: 11,
-    page: 2,
-    totalpages: 2,
-    image: `${kimia}`,
-    productTitle: "kimia",
-    rate: "150",
-    mrp: "500",
-    weight: "500g",
-},
-{
-    id: 12,
-    page: 2,
-    totalpages: 2,
-    image: `${kimia}`,
-    productTitle: "kimia",
-    rate: "150",
-    mrp: "500",
-    weight: "500g",
-},
-{
-    id: 13,
-    page: 2,
-    totalpages: 2,
-    image: `${kimia}`,
-    productTitle: "kimia",
-    rate: "150",
-    mrp: "500",
-    weight: "500g",
-},
-{
-    id: 14,
-    page: 2,
-    totalpages: 2,
-    image: `${kimia}`,
-    productTitle: "kimia",
-    rate: "150",
-    mrp: "500",
-    weight: "500g",
-},
-{
-    id: 15,
-    page: 2,
-    totalpages: 2,
-    image: `${kimia}`,
-    productTitle: "kimia",
-    rate: "150",
-    mrp: "500",
-    weight: "500g",
-},
-{
-    id: 16,
-    page: 2,
-    totalpages: 2,
-    image: `${kimia}`,
-    productTitle: "kimia",
-    rate: "150",
-    mrp: "500",
-    weight: "500g",
-},
-{
-    id: 17,
-    page: 2,
-    totalpages: 2,
-    image: `${kimia}`,
-    productTitle: "kimia",
-    rate: "150",
-    mrp: "500",
-    weight: "500g",
-},]
+
 
 
 const ProductList = ({ cartlength }) => {
@@ -430,6 +94,30 @@ const ProductList = ({ cartlength }) => {
 
     const addtocartusecontext = useContext(addtocartcontext);
     const { addtocart } = addtocartusecontext;
+    const [productdata,setproductdata]=useState([]);
+
+    const getproducts=async()=>{
+try{
+       const response= await axiosInstance.get('/productcreate/prod');
+       const data=response.data.data;
+       
+       
+        if(data){
+        const res =data.filter(prod=> prod.category.toLowerCase().includes("dates"));
+        setproductdata(res);
+       
+        }
+    }
+    catch(err){
+
+        console.log(err);
+    }
+
+}
+
+    useEffect(()=>{
+        getproducts();
+    },[])
 
     useEffect(() => {
         cartlength(Object.keys(addtocart).length);
@@ -438,24 +126,26 @@ const ProductList = ({ cartlength }) => {
     useEffect(() => {
         const indexOfLastData = currentPage * dataPerPage;
         const indexOfFirstData = indexOfLastData - dataPerPage;
-        setCurrentData(productData.slice(indexOfFirstData, indexOfLastData));
-    }, [currentPage, dataPerPage]);
+        setCurrentData(productdata.slice(indexOfFirstData, indexOfLastData));
+    }, [currentPage, dataPerPage,productdata]);
 
     const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
+    const arr =[1,2,3,4,5];
 
     return (
         <>
             <div className='card-container'>
-                {currentData.map((prod) => (
-                    <ProductCard key={prod.id} pro={prod} />
-                ))}
+                {currentData?currentData.map((prod) => (
+                    <ProductCard key={prod._id} pro={prod} />
+                )):arr.map((car)=>(<CardshimmeringEffect/>))}
             </div>
-            <Pagination 
+          {currentData?(<Pagination 
                 dataPerPage={dataPerPage} 
-                totalData={productData.length} 
+                totalData={productdata.length} 
                 paginate={paginate} 
                 currentPage={currentPage}
-            />
+            />):null}  
         </>
     );
 };

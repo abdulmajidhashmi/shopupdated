@@ -6,7 +6,7 @@ const ClientOrder = ({data}) => {
 const [totalvalue,settotalvalue] =useState(0);
    useEffect(()=>{
 
-    console.log(data.order.items);
+    console.log("this is test data",data);
     
     if (data && data.order && data.order.items) {
         const totalSum = data.order.items.reduce((sum, item) => sum + item.total, 0);
@@ -59,10 +59,10 @@ const [totalvalue,settotalvalue] =useState(0);
                         </div>
                         <div
                             class="col-span-4 sm:col-span-3 max-sm:mt-4 sm:pl-8 flex flex-col justify-center max-sm:items-center">
-                            <h6 class="font-manrope font-semibold text-2xl leading-9 text-black mb-1 whitespace-nowrap">
+                            <h6 class="font-manrope font-semibold text-xl leading-9 text-black mb-1 whitespace-nowrap">
                                 {dat.title}</h6>
-                            <p class="font-normal text-lg leading-8 text-gray-500 mb-8 whitespace-nowrap">By: Dust
-                                Studios</p>
+                            {/* <p class="font-normal text-lg leading-8 text-gray-500 mb-8 whitespace-nowrap">By: Dust
+                                Studios</p> */}
                             <div class="flex items-center max-sm:flex-col gap-x-8 gap-y-3">
                                 <span class="font-normal text-lg leading-8 text-gray-500 whitespace-nowrap">Size:
                                     s</span>

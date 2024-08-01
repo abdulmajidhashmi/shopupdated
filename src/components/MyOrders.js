@@ -14,8 +14,8 @@ const MyOrders = () => {
           const data = { email: user.email };
           console.log(data);
           const response = await axiosInstance.post("/order/userorder", data);
-          console.log(response.data);
-          setOrders(response.data);
+          console.log(response.data.data);
+          setOrders(response.data.data);
         }
       } catch (error) {
         console.error("Error fetching orders:", error);

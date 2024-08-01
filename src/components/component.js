@@ -5,6 +5,8 @@ import NavHeader from "./NavHeader.js";
 import ProductList from "./CardList.js";
 import { useState } from "react";
 import './NavigationBar.css'
+import Footer from "./Footer.js";
+import Iframe from "./Iframe.js";
 
 const Component =()=>{
 
@@ -23,6 +25,8 @@ return(
         <NavHeader/>
         <ProductList cartlength={addtocartprop}/>
         <NavigationBar/>
+        <Iframe/>
+        <Footer/>
     
 
         

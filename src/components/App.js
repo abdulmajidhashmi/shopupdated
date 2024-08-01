@@ -31,6 +31,7 @@ import Checkout from './Checkout.js'
 import MyOrders from "./MyOrders.js";
 import AdminOrders from "./backend/admin/Orders.js";
 import PageNotFound from "./PageNotFound.js";
+import Footer from "./Footer.js";
 // const router = createBrowserRouter([
 //     {
 //         path: "/hrahim/",
@@ -96,12 +97,13 @@ const App = () => {
                     </>
                 } />
                 <Route path="/my-orders" element={
-                    <> <Header/><MyOrders/> </>
+                    <> <Header/><MyOrders/><Footer/> </>
                 } />
 
                 <Route path="/checkout" element={
                     <>
                         <Checkout />
+                        <Footer/>
                     </>
                 } />
 
@@ -137,12 +139,14 @@ const App = () => {
                         <NavHeader />
                         <MadinaCardlist />
                         <NavigationBar />
+                        <Footer/>
                     </>
                 } />
                 <Route path="/product-detail/:id" element={
                     <>
                         <Header />
                         <ProductDetail />
+                        <Footer/>
                     </>
                 } />
                 <Route path="/my-account" element={

@@ -1,0 +1,40 @@
+.address{
+
+width:100%;
+    display: flex;
+    justify-content: center;
+
+}
+.address-heading{
+
+    text-align: center;
+    color:white;
+    font-weight: 400;
+    font-size: 20px;
+    margin: 4px;
+}
+.frame{
+
+    width: 100%;
+    height: 500px;
+}
+
+.address-main{
+
+    box-shadow: 1px 1px 10px grey;
+    
+    border-radius: 15px;
+    margin:15px 15px 30px 15px;
+    padding: 15px;
+    background: hsla(24, 100%, 83%, 1);
+
+    background: hsla(312, 66%, 76%, 1);
+
+    background: linear-gradient(90deg, hsla(312, 66%, 76%, 1) 0%, hsla(234, 93%, 67%, 1) 100%);
+    
+    background: -moz-linear-gradient(90deg, hsla(312, 66%, 76%, 1) 0%, hsla(234, 93%, 67%, 1) 100%);
+    
+    background: -webkit-linear-gradient(90deg, hsla(312, 66%, 76%, 1) 0%, hsla(234, 93%, 67%, 1) 100%);
+    
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#EA98DA", endColorstr="#5B6CF9", GradientType=1 );
+}

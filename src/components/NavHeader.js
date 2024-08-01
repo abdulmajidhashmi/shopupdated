@@ -70,6 +70,7 @@ const NavHeader = () => {
                 <div className='vertical'></div>
                 <NavLink
                     to="/sukkary"
+                    
                     className={({ isActive }) => (isActive ? 'set active right-active' : 'set')}
                 >
                     <div className='madina'>Madina Dates</div>

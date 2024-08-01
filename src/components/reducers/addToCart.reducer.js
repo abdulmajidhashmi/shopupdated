@@ -136,8 +136,13 @@ export const cartSlice = createSlice({
     loginobject: (state, action) => {
       state.loginobj = action.payload;
     },
+    deletecart:(state,action) =>{
+
+      state.value ={};
+      state.total=0;
+    },
   },
 });
 
-export const { increaseCart, decreaseCart, calculatetotal, removecart, loginobject } = cartSlice.actions;
+export const { increaseCart, decreaseCart, calculatetotal, removecart, loginobject,deletecart } = cartSlice.actions;
 export default cartSlice.reducer;

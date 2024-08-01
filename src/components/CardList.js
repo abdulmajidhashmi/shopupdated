@@ -140,7 +140,7 @@ try{
     
 
     return (
-        <><div className='card-container'>{loading?(arr.map(()=>(<CardshimmeringEffect/>))):(<><div className='card-container'>
+        <><div className='card-containers'>{loading?(arr.map(()=>(<CardshimmeringEffect/>))):(<><div className='card-container'>
         {currentData.map((prod) => (
             <ProductCard key={prod._id} pro={prod} />
         ))}

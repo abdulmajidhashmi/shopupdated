@@ -1,0 +1,20 @@
+.footer-heading{
+
+
+    color:white;
+    font-size: 30px;
+}
+.footer{
+
+   
+}
+
+@media only screen and (max-width:700px){
+.footer{
+
+    margin-bottom: 55px;
+    
+}
+
+
+}

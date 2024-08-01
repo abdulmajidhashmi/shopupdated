@@ -223,6 +223,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { orderdata } from "./reducers/order.reducer";
 import { useNavigate } from "react-router-dom";
 import { axiosInstance } from "./backend/axiosInstance";
+import { deletecart } from "./reducers/addToCart.reducer";
 
 const Checkout = () => {
     const user = useSelector((state) => state.user.user);
@@ -279,6 +280,7 @@ const Checkout = () => {
         axiosInstance.post("/order/create", actualserverdata)
             .then((response) => {
                 console.log(response);
+                dispatch(deletecart());
             })
             .catch((err) => {
                 console.log(err);

@@ -15,6 +15,7 @@ import { axiosInstance } from './backend/axiosInstance';
 const Addtocart = () => {
 
     const [productdata,setproductdata] =useState([]);
+    const [addtocartdata,setaddtocartdata] = useState([]);
 
 
     const getproduct= async ()=>{
@@ -22,6 +23,7 @@ try{
 
     const response = await axiosInstance.get('/productcreate/prod');
     setproductdata(response.data.data);
+    console.log("this is data",response.data.data);
 
 
 }catch(err){
@@ -34,7 +36,7 @@ try{
     useEffect(()=>{
 
         getproduct();
-        console.log(count);
+        console.log("this is count",count);
     },[])
 
     const count = useSelector((state) => state.cart.value);
@@ -43,9 +45,13 @@ try{
 
     const [cartData, setCartData] = useState({ items: [], totalPrice: 0 });
 
+useEffect(()=>{
+    if(productdata.length>0){
+        setaddtocartdata(productdata.filter(prod => count[prod._id]));
+    }
 
+},[productdata,count])
 
-    const addtocartdata = productdata.filter(prod => count[prod._id]);
 
     function addbutton(event) {
         dispatch(increaseCart({ proid: event }));
@@ -60,6 +66,8 @@ try{
         dispatch(removecart({proid:event}))
     }
     useEffect(() => {
+
+        if(addtocartdata.length>0){
         const items = addtocartdata.map(prod => ({
             id: prod._id,
             title: prod.name,
@@ -67,7 +75,7 @@ try{
             quantity: count[prod._id],
             total: count[prod._id] * prod.price
         }));
-
+console.log(addtocartdata);
         const totalPrice = items.reduce((sum, item) => sum + item.total, 0);
 
         setCartData({ items, totalPrice });
@@ -79,9 +87,9 @@ try{
             order: { items, totalPrice }, // assuming no orders for now, you can update this as needed
             orderuserdetails: {}
           }));
-
+        }
         
-    }, [count]);
+    }, [addtocartdata]);
 
     return (
         <>

@@ -106,6 +106,8 @@
   .slick-dots li button:before {
     display: none;
   }
+
+  
   
   .slick-dots li.slick-active button {
     background-color: #912BBC; /* Adjust active dot color as needed */

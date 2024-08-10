@@ -14,6 +14,7 @@ import {
     Route,
     RouterProvider,
     Routes,
+    useLocation
 } from "react-router-dom";
 
 import ProductCard from "./Card.js";
@@ -77,15 +78,20 @@ import Footer from "./Footer.js";
 
 // ])
 
+import { AnimatePresence } from "framer-motion";
 
 
 const App = () => {
-
+const location =useLocation();
 
     return (
 
-        <BrowserRouter >
-            <Routes>
+
+        
+
+      
+        <AnimatePresence initial="false">
+        <Routes location={location} key={location.pathname}>
                 <Route path="/admin/orders" element={
                         <>
                         <AdminOrders/>
@@ -115,7 +121,7 @@ const App = () => {
                 <Route path="/login" element={
                     <>
 
-                        {/* <Login/> */}
+                        
                         <LoginFinal />
                     </>
                 } />
@@ -128,7 +134,7 @@ const App = () => {
                 <Route path="/register" element={
                     <>
 
-                        {/* <SignUp/> */}
+                     
                         <RegisterFinal />
                     </>
                 } />
@@ -157,7 +163,7 @@ const App = () => {
                 } />
                 <Route path="/navbar" element={
                     <>
-                        <Navbar />
+                        <Navbar/>
                         <NavigationBar />
                     </>
                 } />
@@ -170,8 +176,9 @@ const App = () => {
                     
                     <PageNotFound/>}/>
             </Routes>
-        </BrowserRouter>
-
+            </AnimatePresence>
+        
+      
 
     );
 }

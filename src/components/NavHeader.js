@@ -53,6 +53,7 @@
 
 
 
+import Animations from './Animations';
 import './NavHeader.css';
 import { NavLink } from 'react-router-dom';
 

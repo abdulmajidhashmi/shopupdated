@@ -7,6 +7,8 @@ import { useState } from "react";
 import './NavigationBar.css'
 import Footer from "./Footer.js";
 import Iframe from "./Iframe.js";
+import Animations from "./Animations.js";
+import Chatbot from "./Chatbot.js";
 
 const Component =()=>{
 
@@ -27,6 +29,7 @@ return(
         <NavigationBar/>
         <Iframe/>
         <Footer/>
+        <Chatbot/>
     
 
         

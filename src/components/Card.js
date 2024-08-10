@@ -5,6 +5,7 @@ import { useContext, useEffect, useState,memo } from "react";
 import { addtocartcontext } from "../context/Addtocartcontext";
 import { useSelector, useDispatch } from "react-redux";
 import { increaseCart, decreaseCart } from "./reducers/addToCart.reducer";
+import Animations from "./Animations";
 const ProductCard = ({ pro }) => {
   const count = useSelector((state) => state.cart.value);
   const dispatch = useDispatch();

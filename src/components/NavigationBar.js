@@ -3,6 +3,8 @@ import "./Main.css";
 import { useRef } from "react";
 import { NavLink } from "react-router-dom";
 import { useLocation } from "react-router-dom";
+import Navbar from "./Navbar";
+import Animations from "./Animations";
 const NavigationBar = () => {
 
 const location = useLocation();
@@ -12,6 +14,8 @@ return paths.includes(location.pathname);
   }
   return (
     <div>
+
+     
       <div className="nav-main-div">
         <ul className="ul-div">
           <NavLink to="/" className={({isActive})=>(Navs(['/','/sukkary'])?'nav active':'')}>

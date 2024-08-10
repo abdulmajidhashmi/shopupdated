@@ -6,20 +6,21 @@ import App from './components/App.js';
 import { Provider } from 'react-redux';
 import store from './components/store/store.js';
 import Addtocartprovider from "./context/Addtocartcontext.js";
+import { BrowserRouter } from 'react-router-dom';
 
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   // <React.StrictMode>
-
+<BrowserRouter>
   <Provider store={store}>
         <Addtocartprovider>
     <App/>
     </Addtocartprovider>
 
        </Provider>
-    
+       </BrowserRouter>
   // </React.StrictMode>
 );
 

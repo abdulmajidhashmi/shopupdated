@@ -15,6 +15,9 @@ const Chatbot = () => {
     loadScript('https://cdn.botpress.cloud/webchat/v2/inject.js');
     loadScript('https://mediafiles.botpress.cloud/63420cb5-2a9c-494e-a92f-b646a36dea86/webchat/v2/config.js');
 
+
+  
+    
     
   }, []);
 

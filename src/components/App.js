@@ -5,7 +5,8 @@ import NavHeader from "./NavHeader.js";
 import MadinaCardlist from "./MadinaCardlist.js";
 import ProductDetail from "./ProductDetail.js";
 import Component from "./component.js";
-import './NavigationBar.css'
+import './NavigationBar.css';
+import Notifications from "./Notifications.js";
 
 
 import {
@@ -92,6 +93,7 @@ const location =useLocation();
       
         <AnimatePresence initial="false">
         <Routes location={location} key={location.pathname}>
+            
                 <Route path="/admin/orders" element={
                         <>
                         <AdminOrders/>
@@ -99,6 +101,7 @@ const location =useLocation();
                 }/>
                 <Route path="/" element={
                     <>
+                    <Notifications/>
                         <Component />
                     </>
                 } />

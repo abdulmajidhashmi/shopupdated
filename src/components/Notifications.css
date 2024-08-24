@@ -1,23 +1,49 @@
 .notify{
 
     width: 100%;
-    height: 45px;
-    background-color: #e22d4c;
+    height: 48px;
+    /* background-color: #e22d4c; */
+    background-color: #4BB543;
     color: white;
     display: flex;
     padding: 5px;
     align-items: center;
     justify-content: center;
+    box-sizing: border-box;
 }
 
 .notify_p{
 
-    /* text-align: center; */
+    text-align: center;
+    width: 97%;
+    margin-right: 9px;
+   
+    
+
 }
 .notify_cut{
 
     
-    right:15px;
-    position: absolute;
+    right:10px;
+    position: relative;
+    margin-left: 5px;
+    cursor: pointer;
+  
     
+}
+.notify_cut:hover{
+
+    color:lightgray;
+}
+
+@media only screen and (max-width:300px){
+
+    .notify_p{
+
+        font-size: 15px;
+        line-height: 1rem;
+        
+    
+    }
+
 }

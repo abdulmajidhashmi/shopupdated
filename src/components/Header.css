@@ -32,6 +32,10 @@
     width: 100%;
     margin-top: 10px;
 }
+.search-ul2{
+width: 100%;
+    
+}
 
 .search-ul-li {
     position: absolute;
@@ -113,6 +117,10 @@ display:none;
 }
 .login_div:hover{
     color: #F0EBE3;
+}
+.search-li:hover{
+
+    background-color:#F0EBE3;
 }
 
 /* .fa-solid.fa-user:hover{

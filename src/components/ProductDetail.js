@@ -1,44 +1,32 @@
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import "./ProductDetail.css";
 import "./Main.css";
 import sukkary from "./../images/sukkary.jpg";
 import kimia from "./../images/kimia.jpeg";
-import Slider from "react-slick";
 import React, { Component } from "react";
 
 import { useSelector, useDispatch } from "react-redux";
 import { increaseCart, decreaseCart } from "./reducers/addToCart.reducer";
 import { axiosInstance } from "./backend/axiosInstance";
+import { Descriptions } from "antd";
 
 const ProductDetail = () => {
   const param = useParams(); // Destructure the id from useParams
-
-  var [counter, setcounter] = useState(1);
-  // function addbutton(event) {
-
-  //     setcounter(counter + 1);
-  // }
-
-  // function removebutton(event) {
-
-  //     if (counter > 1) {
-  //         setcounter(counter - 1);
-  //     }
-  // }
-
-  const [productdata, setproductdata] = useState([]);
+  const navigate = useNavigate();
+  const [data, setdata] = useState();
 
   const getproducts = async () => {
+    console.log(param.id)
     try {
-      const response = await axiosInstance.get("/productcreate/prod");
+      const response = await axiosInstance.get(`/productcreate/prod/${param.id}`);
       const dat = response.data.data;
+      console.log(dat);
 
       if (dat) {
-        const res = dat.filter((prod) =>
-          prod.category.toLowerCase().includes("dates")
-        );
-        setproductdata(res);
+        
+        setdata(dat);
+        
       }
     } catch (err) {
       console.log(err);
@@ -49,16 +37,9 @@ const ProductDetail = () => {
     getproducts();
   }, []);
 
-  const [data, setdata] = useState();
+  
 
-  useEffect(() => {
-    const temp = productdata.find(findthenumber);
-    setdata(temp);
-  }, [productdata, param.id]);
-
-  function findthenumber(product) {
-    return product._id == param.id;
-  }
+  
 
   const count = useSelector((state) => state.cart.value);
   const dispatch = useDispatch();
@@ -66,12 +47,18 @@ const ProductDetail = () => {
   function addbutton(event) {
     dispatch(increaseCart({ proid: event }));
   }
-  function buynow(event){
-
-   if(count[event]===0){
-    dispatch(increaseCart({ proid: event }));
-   }
+  
+  function buynow(event) {
+    const currentCount = count[event] || 0;
+    if (currentCount === 0) {
+      dispatch(increaseCart({ proid: event }));
+    }
+    navigate('/addtocart');
   }
+  
+  useEffect(()=>{
+    console.log("the count before",count);
+  },[count])
   function removebutton(event) {
     dispatch(decreaseCart({ proid: event }));
   }
@@ -150,7 +137,7 @@ const ProductDetail = () => {
                     </button>
                   </div>
                   <div class="mt-8 space-y-4">
-                    <Link to="/addtocart">
+                    {/* <Link to="/addtocart"> */}
                       <button
                         onClick={() => buynow(data._id)}
                         type="button"
@@ -158,7 +145,7 @@ const ProductDetail = () => {
                       >
                         Buy now
                       </button>
-                    </Link>
+                    {/* </Link> */}
                     <button
                       onClick={() => addbutton(data._id)}
                       type="button"
@@ -225,21 +212,9 @@ const ProductDetail = () => {
                   </h3>
                   <ul class="space-y-3 list-disc mt-4 pl-4 text-sm text-gray-800">
                     <li>
-                      A gray t-shirt is a wardrobe essential because it is so
-                      versatile.
+                      {data.description}
                     </li>
-                    <li>
-                      Available in a wide range of sizes, from extra small to
-                      extra large, and even in tall and petite sizes.
-                    </li>
-                    <li>
-                      This is easy to care for. They can usually be
-                      machine-washed and dried on low heat.
-                    </li>
-                    <li>
-                      You can add your own designs, paintings, or embroidery to
-                      make it your own.
-                    </li>
+                   
                   </ul>
                 </div>
               </div>

@@ -46,9 +46,12 @@ try{
     const [cartData, setCartData] = useState({ items: [], totalPrice: 0 });
 
 useEffect(()=>{
-    if(productdata.length>0){
+    
+
+    if (productdata.length > 0) {
         setaddtocartdata(productdata.filter(prod => count[prod._id]));
-    }
+      }
+      
 
 },[productdata,count])
 
@@ -89,7 +92,7 @@ console.log(addtocartdata);
           }));
         }
         
-    }, [addtocartdata]);
+    }, [addtocartdata,count]);
 
     return (
         <>

@@ -115,6 +115,7 @@ export const cartSlice = createSlice({
   initialState,
   reducers: {
     increaseCart: (state, action) => {
+      console.log("this is reducer",state,action);
       const { proid } = action.payload;
       const currentCounter = state.value[proid] || 0;
       state.value[proid] = currentCounter + 1;

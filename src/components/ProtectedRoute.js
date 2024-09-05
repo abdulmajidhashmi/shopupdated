@@ -51,7 +51,7 @@ const ProtectedRoute =({children})=>{
       
         if(!role || role!=='admin'){
     
-            return <Navigate to="/"/>
+            return <PageNotFound/>
         }
 
      

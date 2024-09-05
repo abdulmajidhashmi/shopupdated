@@ -87,6 +87,7 @@ const ProductList = ({ cartlength }) => {
         );
       
         setproductdata(res);
+        
         const stringify = JSON.stringify(res);
         sessionStorage.setItem("products", stringify);
         setloading(false);

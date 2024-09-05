@@ -1,5 +1,32 @@
 
+.product-load{
 
+    width: 100%;
+    height: calc(100vh - 70px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.thumbnail {
+    width: 100px; /* Full width of the container */
+    height: 100px; /* Fixed height for thumbnails */
+    object-fit: cover; /* Ensures the image covers the dimensions */
+    cursor: pointer; /* Indicates clickable image */
+    /* border: 1px solid #ddd; Optional: Adds a border around the image */
+    border-radius: 5px; /* Optional: Rounds the corners of the image */
+  }
+
+  .main-image-prod {
+    width: calc((4 * 100px) + (8px * 3) ) ;/* Adjust to fit your layout */
+    height: calc((4 * 100px) + (8px * 3) ) ; /* Keeps the aspect ratio of the image */
+     object-fit: cover;/* Ensures the image covers the dimensions */
+  }
+  .image-container-prod {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem; /* Adjust as needed */
+    width: 100px; /* Fixed width for thumbnails */
+  }
 .cards1{
 
     width: 100%;
@@ -71,14 +98,44 @@ width:100%;
 }
 
 
+.prod-border{
 
+    border:3px solid black;
+}
 
-@media only screen and (max-width:700px){
+@media only screen and (max-width:640px){
+    .thumbnail{
 
-    .main-product-detail{
+        height: 65px;
+        width: 65px;
+    }
+    .image-container-prod {
+       
+        flex-direction: row;
+        width: 80px;
+        height: 80px;
+        
+      }
+      .main-product-detail{
         flex-direction: column;
         align-items: center;
     }
+
+}
+@media only screen and (max-width:700px){
+
+
+    .main-image-prod{
+        height: 220px;
+        width: 250px;
+        width: calc((4 * 60px) + (9px * 3) ) ;/* Adjust to fit your layout */
+        height: calc((4 * 50px) + (8px * 4) ) ;
+        
+    }
+
+    
+
+    
     .sliders-container{
 
         width: 80%;

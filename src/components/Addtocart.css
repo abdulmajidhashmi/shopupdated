@@ -27,13 +27,20 @@ font-size: 30px;
 }
 .li-image{
 
-    /* width: 200px;
-    height: 200px; */
+    max-width: 100px;
+    max-height: 100px;
 }
 
 .main-div-addtocart{
     /* display: flex;
     justify-content: space-around; */
+    padding-bottom: 15px;
+
+}
+.screen-height{
+
+    min-height:calc(100vh - 70px) ;
+    
 }
 
 @media only screen and (max-width:700px){

@@ -37,6 +37,7 @@ const Header = ({ props }) => {
   const navigate = useNavigate();
 
   const { user } = useSelector((state) => state.user);
+  
 
   // useEffect(() => {
 

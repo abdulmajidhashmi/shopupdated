@@ -68,7 +68,7 @@ try{
             
                 
                 
-                <div class="mb-2 flex justify-between">
+                <div className="mb-2  flex justify-between">
                             <p class="text-gray-700">MRP Total</p>
                             <p class="text-gray-700">{mrptotal}</p>
                         </div>

@@ -1,21 +1,21 @@
 import Header from "./Header.js";
-import SimpleSlider from "./Carousel.js"; import MyAccountpage from "./MyAccountpage.js";
+import SimpleSlider from "./Carousel.js";
+import MyAccountpage from "./MyAccountpage.js";
 import NavigationBar from "./NavigationBar.js";
 import NavHeader from "./NavHeader.js";
 import MadinaCardlist from "./MadinaCardlist.js";
 import ProductDetail from "./ProductDetail.js";
 import Component from "./component.js";
-import './NavigationBar.css';
+import "./NavigationBar.css";
 import Notifications from "./Notifications.js";
 
-
 import {
-    BrowserRouter,
-    createBrowserRouter,
-    Route,
-    RouterProvider,
-    Routes,
-    useLocation
+  BrowserRouter,
+  createBrowserRouter,
+  Route,
+  RouterProvider,
+  Routes,
+  useLocation,
 } from "react-router-dom";
 
 import ProductCard from "./Card.js";
@@ -29,7 +29,7 @@ import RegisterFinal from "./RegisterFinal.js";
 import HomePage from "./backend/admin/HomePage.js";
 import Products from "./backend/admin/Products.js";
 import ProtectedRoute from "./ProtectedRoute.js";
-import Checkout from './Checkout.js'
+import Checkout from "./Checkout.js";
 import MyOrders from "./MyOrders.js";
 import AdminOrders from "./backend/admin/Orders.js";
 import PageNotFound from "./PageNotFound.js";
@@ -80,113 +80,153 @@ import Footer from "./Footer.js";
 // ])
 
 import { AnimatePresence } from "framer-motion";
-
+import Scrolltotop from "./Scrolltotop.js";
 
 const App = () => {
-const location =useLocation();
+  const location = useLocation();
 
-    return (
-
-
+  return (
+    <AnimatePresence initial="false">
+      <Scrolltotop />
+      <Routes location={location} key={location.pathname}>
         
-
-      
-        <AnimatePresence initial="false">
-        <Routes location={location} key={location.pathname}>
+        <Route
+          path="/admin/orders"
+          element={
+            <ProtectedRoute>
+            <>
+              <AdminOrders />
+            </>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/"
+          element={
             
-                <Route path="/admin/orders" element={
-                        <>
-                        <AdminOrders/>
-                        </>
-                }/>
-                <Route path="/" element={
-                    <>
-                    <Notifications/>
-                        <Component />
-                    </>
-                } />
-                <Route path="/my-orders" element={
-                    <> <Header/><MyOrders/><Footer/> </>
-                } />
+         
+                <>
+              <Notifications />
+              <Component />
+              </>
+             
+            
+          }
+        />
+        <Route
+          path="/my-orders"
+          element={
+            <>
+              {" "}
+              <Header />
+              <MyOrders />
+              <Footer />{" "}
+            </>
+          }
+        />
 
-                <Route path="/checkout" element={
-                    <>
-                        <Checkout />
-                        <Footer/>
-                    </>
-                } />
+        <Route
+          path="/checkout"
+          element={
+            <>
+              <Header />
+              <Checkout />
+              <Footer />
+            </>
+          }
+        />
 
-                <Route path="/admin/product" element={
-                    <>
-                        <Products />
-                    </>
-                } />
-                <Route path="/login" element={
-                    <>
-
-                        
-                        <LoginFinal />
-                    </>
-                } />
-                <Route path="/admin" element={
-                    <>
-
-                        <HomePage />
-                    </>
-                } />
-                <Route path="/register" element={
-                    <>
-
-                     
-                        <RegisterFinal />
-                    </>
-                } />
-                <Route path="/sukkary" element={
-                    <>
-                        <Header />
-                        <SimpleSlider />
-                        <NavHeader />
-                        <MadinaCardlist />
-                        <NavigationBar />
-                        <Footer/>
-                    </>
-                } />
-                <Route path="/product-detail/:id" element={
-                    <>
-                        <Header />
-                        <ProductDetail />
-                        <Footer/>
-                    </>
-                } />
-                <Route path="/my-account" element={
-                    <>
-                        <MyAccountpage />
-                        <NavigationBar />
-                    </>
-                } />
-                <Route path="/navbar" element={
-                    <>
-                        <Navbar/>
-                        <NavigationBar />
-                    </>
-                } />
-                <Route path="/addtocart" element={
-                    <>
-                        <Componentaddtocart />
-                    </>
-                } />
-                <Route path="*" element={
-                    
-                    <PageNotFound/>}/>
-            </Routes>
-            </AnimatePresence>
-        
-      
-
-    );
-}
+        <Route
+          path="/admin/product"
+          element={
+            <ProtectedRoute>
+            <>
+              <Products />
+            </>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/login"
+          element={
+            <>
+              <LoginFinal />
+            </>
+          }
+        />
+        <Route
+          path="/admin"
+          element={
+            <ProtectedRoute>
+            <>
+              <HomePage />
+            </>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/register"
+          element={
+            <>
+              <RegisterFinal />
+            </>
+          }
+        />
+        <Route
+          path="/sukkary"
+          element={
+            <>
+            <Notifications />
+              <Header />
+              <SimpleSlider />
+              <NavHeader />
+              <MadinaCardlist />
+              <NavigationBar />
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          path="/product-detail/:id"
+          element={
+            <>
+              <Header />
+              <ProductDetail />
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          path="/my-account"
+          element={
+            <>
+              <MyAccountpage />
+              <NavigationBar />
+            </>
+          }
+        />
+        <Route
+          path="/navbar"
+          element={
+            <>
+              <Navbar />
+              <NavigationBar />
+            </>
+          }
+        />
+        <Route
+          path="/addtocart"
+          element={
+            <>
+              <Componentaddtocart />
+            </>
+          }
+        />
+       
+        <Route path="*" element={<PageNotFound />} />
+      </Routes>
+    </AnimatePresence>
+  );
+};
 
 export default App;
-
-
-

@@ -11,29 +11,22 @@
    
     
     }
-    .hover_image{
+    
 
 
-        max-width: 200px;
-        max-height: 150px;
-        height: auto;
-        width: auto;
-    }
-
-
-.images_column{
+/* .images_column{
 display: flex;
     justify-content: center;
     align-items: center; 
     flex-direction: column;
 
-}
+} */
 .allimages_div2{
     height: 100vh;
-    width:100%;
+    /* width:100%; */
     
     position: fixed;
-    background-color: aliceblue;
+    background-color: white;
     width: 50%;
     height: 50%;
     top:50%;
@@ -41,3 +34,11 @@ display: flex;
     transform: translate(-50%,-50%);
     
 }
+
+@media only screen and (max-width:700px){
+    .allimages_div2{
+
+        width: 85%;
+    }
+}
+

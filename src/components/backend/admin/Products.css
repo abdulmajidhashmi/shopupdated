@@ -55,6 +55,7 @@
    justify-content: center;
    padding: 10px;
    
+   
 }
 
 
@@ -75,21 +76,136 @@
    width: 150px;
    height: 40px;
    background-color: lawngreen;
+   border-radius: 12px;
+   border:1px solid white;
+   transition: 0.5s ;
+   position: relative;
 }
-
-@media only screen and (max-width:500px){
-
+.submit_done:hover{
    
+   background-color: rgb(124, 236, 12);
+  
+}
 
+.close_mark_edit{
+
+   position: absolute;
+   right: 0px;
+   margin-right: 17px;
+   margin-top: 3px;
+   font-size: 17px;
+  
+}
+.edit_main{
+
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   margin-right: 20px;
+   margin-left: 20px;
+   margin-top: 20px;
    
-.edit_dialog_box{
-   width: 75%;
 }
 
+.images_column{
+
+   display: grid;
+   justify-items: center;
+   grid-template-columns: repeat(2,1fr);
+   flex-wrap: wrap;
+   height: 100%;
+   width: 100%;
+   margin-top: 10px;
+   margin-right: 15px;
 }
-@media only screen and (max-width:1000px){
+.allimages_div2{
+
+   background-color: white;
+   border-radius: 10px;
+   box-shadow: 1px 1px 8px grey;
+   padding: 10px;
+}
+
+
+.hover_image{
+
+   width: 70%;
+   height: 150px;
+   border-radius: 10px;
+   object-fit:cover;
+   box-shadow: 1px 1px 8px rgb(133, 98, 172);
+   border: 1px solid grey;
+
+}
+.wrong{
+
+   position: absolute;
+   right: 10px;
+   margin-top: 5px;
+}
+
+
+@media only screen and (min-width:1000px){
 
    .edit_dialog_box{
-      width: 45%;
+      width: 50%;
    }
 }
+
+@media only screen and (max-width:1300px){
+   .edit_dialog_box{
+      
+      width: 60%;
+   }
+
+}
+@media only screen and (max-width:1150px){
+   .edit_dialog_box{
+      
+      width: 80%;
+   }
+
+}
+@media only screen and (max-width:850px){
+   .edit_dialog_box{
+      
+      width: 90%;
+   }
+
+}
+@media only screen and (max-width:750px){
+   .edit_dialog_box{
+      
+      width: 60%;
+   }
+
+   
+
+}
+
+@media only screen and (max-width:570px){
+
+   
+
+   
+   .edit_dialog_box{
+      width: 90%;
+      height: 95%;
+      margin-left: 10px;
+      margin-right: 10px;
+   }
+   .dialog_input{
+
+      width: 97%;
+   }
+   
+   }
+
+   @media only screen and (max-height:700px){
+      
+
+      .hover_image{
+         height: 120px;
+      }
+      
+    }

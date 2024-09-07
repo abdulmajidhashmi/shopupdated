@@ -199,6 +199,11 @@ const Products = () => {
       console.log(err.data);
     }
   };
+
+  function closeeditbox(event){
+    setedit(false);
+
+  }
   return (
     <>
 
@@ -236,6 +241,8 @@ const Products = () => {
 
       {edit ? (
         <div className="edit_dialog_box">
+          <div className="close_mark_edit" onClick={closeeditbox}><i class="fa-solid fa-xmark" ></i></div>
+          <div className="edit_main">
           <input
             className="dialog_input"
             type="text"
@@ -316,8 +323,10 @@ const Products = () => {
             onChange={editchange}
             value={editchanges.description}
           />
+
+</div>
           <button className="submit_done" onClick={doneedit}>
-            done
+            Update
           </button>
         </div>
       ) : null}

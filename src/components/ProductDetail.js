@@ -25,7 +25,7 @@ const ProductDetail = () => {
       console.log(dat);
 
       if (dat) {
-        sessionStorage.setItem(`oneproduct${param.id}`,JSON.stringify(dat));
+        // sessionStorage.setItem(`oneproduct${param.id}`,JSON.stringify(dat));
         setdata(dat);
         setImage(dat.image1);
         console.log(dat);
@@ -37,16 +37,16 @@ const ProductDetail = () => {
   };
 
   useEffect(() => {
-    const sessiondata  = sessionStorage.getItem(`oneproduct${param.id}`)
-    if(sessiondata){
-      const temp = JSON.parse(sessiondata)
-      setdata(temp);
-      setImage(temp.image1);
-    }else{
+    // const sessiondata  = sessionStorage.getItem(`oneproduct${param.id}`)
+    // if(sessiondata){
+    //   const temp = JSON.parse(sessiondata)
+    //   setdata(temp);
+    //   setImage(temp.image1);
+    // }else{}
 
     
     getproducts();
-    }
+    
   }, []);
 
   

@@ -70,26 +70,32 @@ const ProductList = ({ cartlength }) => {
   const [loading, setloading] = useState(false);
   const initialvalues = [1, 2, 3, 4, 5, 6];
   const [arr, setarr] = useState(initialvalues);
+  const [totalPages,settotalPages] = useState(0);
 
   const addtocartusecontext = useContext(addtocartcontext);
   const { addtocart } = addtocartusecontext;
   const [productdata, setproductdata] = useState([]);
 
-  const getproducts = async () => {
+  const getproducts = async (page) => {
     try {
-      const response = await axiosInstance.get("/productcreate/prod");
+      const response = await axiosInstance.get(`/productcreate/prod?page=${page}&limit=${dataPerPage}`);
       const data = response.data.data;
+      const total = response.data.total;
     
-
+console.log(data);
       if (data) {
         const res = data.filter((prod) =>
           prod.category.toLowerCase().includes("dates")
         );
       
         setproductdata(res);
+        console.log(productdata);
+        console.log(res);
+        settotalPages(Math.ceil(total/dataPerPage));
+        window.scrollTo(0,0);
         
-        const stringify = JSON.stringify(res);
-        sessionStorage.setItem("products", stringify);
+        // const stringify = JSON.stringify(res);
+        // sessionStorage.setItem("products", stringify);
         setloading(false);
       }
     } catch (err) {
@@ -99,25 +105,30 @@ const ProductList = ({ cartlength }) => {
   };
 
   useEffect(() => {
-    const sessiondata = sessionStorage.getItem("products");
+    // const sessiondata = sessionStorage.getItem("products");
 
     
-    if (sessiondata) {
-      setproductdata(JSON.parse(sessiondata));
-    } else {
+    // if (sessiondata) {
+    //   setproductdata(JSON.parse(sessiondata));
+    // } else {}
+
+    
       setloading(true);
-      getproducts();
-    }
-  }, []);
+      getproducts(currentPage);
+    
+      
+    
+  }, [currentPage]);
 
   useEffect(() => {
     cartlength(Object.keys(addtocart).length);
-  }, [addtocart, cartlength]);
+  }, [addtocart, cartlength,currentPage]);
 
   useEffect(() => {
     const indexOfLastData = currentPage * dataPerPage;
     const indexOfFirstData = indexOfLastData - dataPerPage;
     setCurrentData(productdata.slice(indexOfFirstData, indexOfLastData));
+    
   }, [currentPage, dataPerPage, productdata]);
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
@@ -130,7 +141,7 @@ const ProductList = ({ cartlength }) => {
         ) : (
           <>
             <div className="card-container">
-              {currentData.map((prod) => (
+              {productdata.map((prod) => (
                 <ProductCard key={prod._id} pro={prod} />
               ))}
             </div>
@@ -139,7 +150,8 @@ const ProductList = ({ cartlength }) => {
               totalData={productdata.length}
               paginate={paginate}
               currentPage={currentPage}
-            />{" "}
+              totalPages={totalPages}
+            />
           </>
         )}
       </div>

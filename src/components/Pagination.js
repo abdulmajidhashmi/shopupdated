@@ -84,10 +84,10 @@
 import React from "react";
 import './Pagination.css';
 
-const Pagination = ({ dataPerPage, totalData, paginate, currentPage }) => {
+const Pagination = ({ dataPerPage, totalData, paginate, currentPage,totalPages }) => {
     const pageNumbers = [];
 
-    for (let i = 1; i <= Math.ceil(totalData / dataPerPage); i++) {
+    for (let i = 1; i <= totalPages; i++) {
         pageNumbers.push(i);
     }
 

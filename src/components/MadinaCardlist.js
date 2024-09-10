@@ -16,7 +16,7 @@ const MadinaCardlist = () => {
     try {
       const response = await axiosInstance.get("/productcreate/prod");
       const data = response.data.data;
-      sessionStorage.setItem('products',JSON.stringify(data));
+      // sessionStorage.setItem('products',JSON.stringify(data));
 
       if (data) {
         const res = data.filter((prod) =>
@@ -33,21 +33,21 @@ const MadinaCardlist = () => {
   };
 
   useEffect(() => {
-    const sessiondata  =sessionStorage.getItem('products');
-    if(sessiondata){
+    // const sessiondata  =sessionStorage.getItem('products');
+    // if(sessiondata){
 
-       const data= JSON.parse(sessiondata)
+    //    const data= JSON.parse(sessiondata)
 
-        if (data) {
-            const res = data.filter((prod) =>
-              prod.category.toLowerCase().includes("madina")
-            );
+    //     if (data) {
+    //         const res = data.filter((prod) =>
+    //           prod.category.toLowerCase().includes("madina")
+    //         );
 
-        setproductdata(res);}
-    }else{
+    //     setproductdata(res);}
+    // }else{}
         setloading(true);
         getproducts();
-    }
+    
     
   },[]);
 

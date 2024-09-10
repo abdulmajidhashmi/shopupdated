@@ -11,6 +11,22 @@
 
     
 }
+.retry_products{
+
+    border-radius: 10px;
+    border: 1px solid red;
+    height: 30px;
+    width: 50px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: pink;
+    cursor: pointer;
+    
+    
+}
 @media only screen and (max-width:700px) {
     .card-container{
 

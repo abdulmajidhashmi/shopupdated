@@ -71,6 +71,7 @@ const ProductList = ({ cartlength }) => {
   const initialvalues = [1, 2, 3, 4, 5, 6];
   const [arr, setarr] = useState(initialvalues);
   const [totalPages,settotalPages] = useState(0);
+  const [servererror,setservererror] = useState(false);
 
   const addtocartusecontext = useContext(addtocartcontext);
   const { addtocart } = addtocartusecontext;
@@ -89,6 +90,7 @@ console.log(data);
         );
       
         setproductdata(res);
+        setservererror(false);
         console.log(productdata);
         console.log(res);
         settotalPages(Math.ceil(total/dataPerPage));
@@ -100,7 +102,9 @@ console.log(data);
       }
     } catch (err) {
       console.log(err);
+      settotalPages(-1);
       setloading(false);
+      setservererror(true);
     }
   };
 
@@ -132,10 +136,18 @@ console.log(data);
   }, [currentPage, dataPerPage, productdata]);
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
+  const retry = (event) =>{ 
+    
+    console.log("hi");
+    
+    setservererror(false);
+    getproducts(1);
+  }
 
   return (
     <>
-      <div className="card-containers">
+      
+      {servererror?<div className="retry_products"><h1  onClick={retry}>Retry</h1></div>:(<div className="card-containers">
         {loading ? (
           arr.map(() => <CardshimmeringEffect />)
         ) : (
@@ -154,7 +166,9 @@ console.log(data);
             />
           </>
         )}
-      </div>
+
+        
+      </div>)}
     </>
   );
 };

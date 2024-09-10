@@ -92,29 +92,31 @@ const Pagination = ({ dataPerPage, totalData, paginate, currentPage,totalPages }
     }
 
     return (
-        <div className="main-pages">
-            <div
-                className={`page page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-gray-800 hover:bg-gray-200 focus:shadow-none ${currentPage === 1 ? "disable" : ""}`}
-                onClick={() => currentPage > 1 && paginate(currentPage - 1)}
-            >
-                prev
-            </div>
-            {pageNumbers.map(number => (
-                <div
-                    key={number}
-                    className={`page page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-gray-800 hover:bg-gray-200 focus:shadow-none ${currentPage === number ? "active" : ""}`}
-                    onClick={() => paginate(number)}
-                >
-                    {number}
-                </div>
-            ))}
-            <div
-                className={`page page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-gray-800 hover:bg-gray-200 focus:shadow-none ${currentPage === pageNumbers.length ? "disable" : ""}`}
-                onClick={() => currentPage < pageNumbers.length && paginate(currentPage + 1)}
-            >
-                next
-            </div>
+<>
+        {totalPages===-1?(''):(<div className="main-pages">
+        <div
+            className={`page page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-gray-800 hover:bg-gray-200 focus:shadow-none ${currentPage === 1 ? "disable" : ""}`}
+            onClick={() => currentPage > 1 && paginate(currentPage - 1)}
+        >
+            prev
         </div>
+        {pageNumbers.map(number => (
+            <div
+                key={number}
+                className={`page page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-gray-800 hover:bg-gray-200 focus:shadow-none ${currentPage === number ? "active" : ""}`}
+                onClick={() => paginate(number)}
+            >
+                {number}
+            </div>
+        ))}
+        <div
+            className={`page page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-gray-800 hover:bg-gray-200 focus:shadow-none ${currentPage === pageNumbers.length ? "disable" : ""}`}
+            onClick={() => currentPage < pageNumbers.length && paginate(currentPage + 1)}
+        >
+            next
+        </div>
+    </div>)}
+    </>  
     );
 };
 

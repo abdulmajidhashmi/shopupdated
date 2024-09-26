@@ -1,0 +1,45 @@
+.or{
+
+    font-size: 20px;
+    font-weight: 400;
+    color:grey;
+}
+
+.regenerateotp:hover{
+cursor: pointer;
+    
+}
+.logpass:hover{
+
+    cursor: pointer;
+}
+.logpassdiv{
+
+    display: flex;
+    justify-content: end;
+}
+.otptime{
+
+    color:black;
+}
+
+.indiacode{
+
+    position: absolute;
+    margin-left: 10px;
+}
+.indiacodeinp{
+
+    /* padding-left: 50px ; */
+}
+.indiacodeline{
+
+    position: absolute;
+    margin-left: 40px;
+    color: grey;
+}
+
+.valid{
+
+    background-color: green;
+}

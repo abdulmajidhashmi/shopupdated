@@ -81,6 +81,10 @@ import Footer from "./Footer.js";
 
 import { AnimatePresence } from "framer-motion";
 import Scrolltotop from "./Scrolltotop.js";
+import LoginRegister from "./LoginRegister.js";
+import LoginRegisteremail from "./LoginRegisteremail.js";
+import Otp from "./Otp.js";
+import Name from "./Name.js";
 
 const App = () => {
   const location = useLocation();
@@ -100,6 +104,16 @@ const App = () => {
             </ProtectedRoute>
           }
         />
+        <Route path="/log" element={
+          // <LoginRegister/>
+          <LoginRegisteremail/>
+        }/>
+        <Route path='/log/otp' element={
+          <Otp/>
+        }/>
+        <Route path='/log/otp/name' element={
+          <Name/>
+        }/>
         <Route
           path="/"
           element={

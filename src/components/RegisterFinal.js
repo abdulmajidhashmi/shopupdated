@@ -34,7 +34,6 @@ const RegisterFinal = () => {
   const navigate = useNavigate();
 
   const handlechange = (event) => {
-  
     const { name, value } = event.target;
     setformvalues({ ...formvalues, [name]: value });
 
@@ -60,7 +59,6 @@ const RegisterFinal = () => {
   };
 
   const userdata = async (formvalue) => {
-
     message.loading("Just a moment");
     await axiosInstance
       .post("/user/signup", formvalue)
@@ -71,11 +69,9 @@ const RegisterFinal = () => {
         setnaverr(true);
         setnavtext("Taking to Login page");
         if (data.data.success === true) {
-
-          
           message.success(data.data.message);
           navigate("/login");
-        }else{
+        } else {
           message.error(data.data.message);
         }
       })
@@ -133,20 +129,15 @@ const RegisterFinal = () => {
     return error;
   };
 
-
-  function nextfocus(event,index){
-if(event.key==="Enter"){
-
- const nextele= allinpRefs.current[index+1];
- if(nextele){
-
-  nextele.focus();
- }else if(!nextele){
-
-  submitform();
- }
-}
-
+  function nextfocus(event, index) {
+    if (event.key === "Enter") {
+      const nextele = allinpRefs.current[index + 1];
+      if (nextele) {
+        nextele.focus();
+      } else if (!nextele) {
+        submitform();
+      }
+    }
   }
   return (
     <div class="register_main_div">
@@ -184,12 +175,12 @@ if(event.key==="Enter"){
                     placeholder="Enter name"
                     onChange={handlechange}
                     onBlur={blur}
-                    onKeyDown={(event)=>nextfocus(event,0)}
-                    ref={rf => (allinpRefs.current[0] =rf)}
+                    onKeyDown={(event) => nextfocus(event, 0)}
+                    ref={(rf) => (allinpRefs.current[0] = rf)}
                     value={formvalues.name}
                   />
                 </div>
-                <div class="flex-1">
+                {/* <div class="flex-1">
                   {errors.surname ? (
                     <p className="validation_error">{errors.surname}</p>
                   ) : (
@@ -206,11 +197,11 @@ if(event.key==="Enter"){
                     placeholder="Enter surname"
                     onChange={handlechange}
                     onBlur={blur}
-                    onKeyDown={(event)=>nextfocus(event,1)}
-                    ref={rf => (allinpRefs.current[1] =rf)}
+                    onKeyDown={(event) => nextfocus(event, 1)}
+                    ref={(rf) => (allinpRefs.current[1] = rf)}
                     value={formvalues.surname}
                   />
-                </div>
+                </div> */}
               </div>
 
               <div>
@@ -230,12 +221,12 @@ if(event.key==="Enter"){
                   placeholder="Enter Mobile Number"
                   onChange={handlechange}
                   onBlur={blur}
-                  onKeyDown={(event)=>nextfocus(event,2)}
-                    ref={rf => (allinpRefs.current[2] =rf)}
+                  onKeyDown={(event) => nextfocus(event, 2)}
+                  ref={(rf) => (allinpRefs.current[2] = rf)}
                   value={formvalues.number}
                 />
               </div>
-              <div>
+              {/* <div>
                 {errors.email ? (
                   <p className="validation_error">{errors.email}</p>
                 ) : (
@@ -252,11 +243,11 @@ if(event.key==="Enter"){
                   placeholder="Enter email"
                   onChange={handlechange}
                   onBlur={blur}
-                  onKeyDown={(event)=>nextfocus(event,3)}
-                    ref={rf => (allinpRefs.current[3] =rf)}
+                  onKeyDown={(event) => nextfocus(event, 3)}
+                  ref={(rf) => (allinpRefs.current[3] = rf)}
                   value={formvalues.email}
                 />
-              </div>
+              </div> */}
               <div>
                 {errors.password ? (
                   <p className="validation_error">{errors.password}</p>
@@ -274,8 +265,8 @@ if(event.key==="Enter"){
                   placeholder="Enter password"
                   onChange={handlechange}
                   onBlur={blur}
-                  onKeyDown={(event)=>nextfocus(event,4)}
-                    ref={rf => (allinpRefs.current[4] =rf)}
+                  onKeyDown={(event) => nextfocus(event, 4)}
+                  ref={(rf) => (allinpRefs.current[4] = rf)}
                   value={formvalues.password}
                 />
               </div>
@@ -296,13 +287,13 @@ if(event.key==="Enter"){
                   placeholder="Enter confirm password"
                   onChange={handlechange}
                   onBlur={blur}
-                  onKeyDown={(event)=>nextfocus(event,5)}
-                    ref={rf => (allinpRefs.current[5] =rf)}
+                  onKeyDown={(event) => nextfocus(event, 5)}
+                  ref={(rf) => (allinpRefs.current[5] = rf)}
                   value={formvalues.confirmpassword}
                 />
               </div>
 
-              <div class="flex items-center">
+              {/* <div class="flex items-center">
                 <input
                   id="remember-me"
                   name="remember-me"
@@ -321,7 +312,7 @@ if(event.key==="Enter"){
                     Terms and Conditions
                   </a>
                 </label>
-              </div>
+              </div> */}
             </div>
 
             <div class="!mt-12">

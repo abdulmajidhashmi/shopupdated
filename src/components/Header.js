@@ -180,7 +180,7 @@ const Header = ({ props }) => {
           <div className={`${user ? "yes" : ""}`}>
             <div className="main_login1">
               {" "}
-              <Link to="/login">
+              <Link to="/log">
                 {" "}
                 <div className="login_div">
                   <h4 className="login">Login/register</h4>
@@ -190,7 +190,7 @@ const Header = ({ props }) => {
 
             <div className="main-login2">
               {" "}
-              <Link to="/login">
+              <Link to="/log">
                 {" "}
                 <div className="login_div2">
                   <i class="fa-regular fa-user"></i>

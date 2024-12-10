@@ -74,7 +74,7 @@ const NavHeader = () => {
                     
                     className={({ isActive }) => (isActive ? 'set active right-active' : 'set')}
                 >
-                    <div className='madina'>Madina Dates</div>
+                    <div className='madina'>Dry fruit</div>
                 </NavLink>
             </div>
         </div>

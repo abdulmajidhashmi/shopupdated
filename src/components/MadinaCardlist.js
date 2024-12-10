@@ -5,6 +5,8 @@ import "./Main.css";
 import "./MadinaCardlist.css";
 import sukkary from "./../images/sukkary.jpg";
 import CardshimmeringEffect from "./CardshimmeringEffect";
+import Card2 from "./Card2";
+import Card3 from "./Card3";
 
 const MadinaCardlist = () => {
   const [productdata, setproductdata] = useState([]);
@@ -20,7 +22,7 @@ const MadinaCardlist = () => {
 
       if (data) {
         const res = data.filter((prod) =>
-          prod.category.toLowerCase().includes("madina")
+          prod.category.toLowerCase().includes("dry fruit")
         );
         setproductdata(res);
        
@@ -52,10 +54,17 @@ const MadinaCardlist = () => {
   },[]);
 
   return (
-    <div className="card-container">
+    // <div className="card-container">
+    //   {loading
+    //     ? arr.map(() => <CardshimmeringEffect />)
+    //     : productdata.map((prod) => <ProductCard pro={prod} />)}
+    // </div>
+
+
+<div className="card-container">
       {loading
         ? arr.map(() => <CardshimmeringEffect />)
-        : productdata.map((prod) => <ProductCard pro={prod} />)}
+        : productdata.map((prod) => <Card3 pro={prod} />)}
     </div>
   );
 };

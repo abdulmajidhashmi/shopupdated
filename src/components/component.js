@@ -9,6 +9,8 @@ import Footer from "./Footer.js";
 import Iframe from "./Iframe.js";
 import Animations from "./Animations.js";
 import Chatbot from "./Chatbot.js";
+import Types from "./Types.js";
+import Landingpage from "./Landingpage.js";
 
 const Component =()=>{
 
@@ -23,13 +25,15 @@ return(
      
     <Header props={cart}/>
     
-        <SimpleSlider/>
+        {/* <SimpleSlider/> */}
+        <Landingpage/>
+        <Types/>
         <NavHeader/>
         <ProductList cartlength={addtocartprop}/>
-        <NavigationBar/>
+        {/* <NavigationBar/> */}
         <Iframe/>
         <Footer/>
-        <Chatbot/>
+        {/* <Chatbot/> */}
     
 
         

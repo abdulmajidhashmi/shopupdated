@@ -62,6 +62,8 @@ import "./Main.css";
 import "./CardList.css";
 import { axiosInstance } from "./backend/axiosInstance";
 import CardshimmeringEffect from "./CardshimmeringEffect";
+import Card2 from "./Card2";
+import Card3 from "./Card3";
 
 const ProductList = ({ cartlength }) => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -152,11 +154,26 @@ console.log(data);
           arr.map(() => <CardshimmeringEffect />)
         ) : (
           <>
-            <div className="card-container">
+            {/* <div className="card-container">
               {productdata.map((prod) => (
                 <ProductCard key={prod._id} pro={prod} />
               ))}
+            </div> */}
+
+
+            {/* <div className="card-container">
+              {productdata.map((prod) => (
+                <Card2 key={prod._id} pro={prod} />
+              ))}
+            </div> */}
+
+<div className="card-container">
+              {productdata.map((prod) => (
+                <Card3 key={prod._id} pro={prod} />
+              ))}
             </div>
+
+
             <Pagination
               dataPerPage={dataPerPage}
               totalData={productdata.length}

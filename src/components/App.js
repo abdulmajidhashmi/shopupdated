@@ -85,56 +85,81 @@ import LoginRegister from "./LoginRegister.js";
 import LoginRegisteremail from "./LoginRegisteremail.js";
 import Otp from "./Otp.js";
 import Name from "./Name.js";
+import Card2 from "./Card2.js";
+import Card3 from "./Card3.js";
+import Anjeer from "./Anjeer.js";
+import ProductList from "./CardList.js";
+import { useState } from "react";
 
 const App = () => {
   const location = useLocation();
+  const [cart,setcart]=useState([]);
+
+    function addtocartprop(data){
+        setcart(data)
+    }
 
   return (
     <AnimatePresence initial="false">
-      <Scrolltotop />
+      {/* <Scrolltotop /> */}
       <Routes location={location} key={location.pathname}>
-        
         <Route
           path="/admin/orders"
           element={
             <ProtectedRoute>
-            <>
-              <AdminOrders />
-            </>
+              <>
+                <AdminOrders />
+              </>
             </ProtectedRoute>
           }
         />
-        <Route path="/log" element={
-          // <LoginRegister/>
-          <LoginRegisteremail/>
-        }/>
-        <Route path='/log/otp' element={
-          <Otp/>
-        }/>
-        <Route path='/log/otp/name' element={
-          <Name/>
-        }/>
+        <Route
+          path="/log"
+          element={
+            // <LoginRegister/>
+            <LoginRegisteremail />
+          }
+        />
+        <Route path="/log/otp" element={<Otp />} />
+        <Route path="/log/otp/name" element={<Name />} />
+        <Route
+          path="/anjeer"
+          element={
+            <>
+              <Header />
+              <Anjeer />
+            </>
+          }
+        />
+         <Route
+          path="/dates"
+          element={
+            <>
+              <Header props={cart}/>
+              <ProductList cartlength={addtocartprop}/>
+            </>
+          }
+        />
+        <Route path='/contact-us' element={<Header/>}/>
+        <Route path='/dry-fruit' element={<Header/>}/>
+        <Route path="/card2" element={<Card3 />} />
         <Route
           path="/"
           element={
-            
-         
-                <>
+            <>
               <Notifications />
               <Component />
-              </>
-             
-            
+            </>
           }
         />
         <Route
           path="/my-orders"
           element={
             <>
-              {" "}
+              
               <Header />
               <MyOrders />
-              <Footer />{" "}
+              <Footer />
             </>
           }
         />
@@ -154,9 +179,9 @@ const App = () => {
           path="/admin/product"
           element={
             <ProtectedRoute>
-            <>
-              <Products />
-            </>
+              <>
+                <Products />
+              </>
             </ProtectedRoute>
           }
         />
@@ -172,9 +197,9 @@ const App = () => {
           path="/admin"
           element={
             <ProtectedRoute>
-            <>
-              <HomePage />
-            </>
+              <>
+                <HomePage />
+              </>
             </ProtectedRoute>
           }
         />
@@ -190,12 +215,12 @@ const App = () => {
           path="/sukkary"
           element={
             <>
-            <Notifications />
+              <Notifications />
               <Header />
-              <SimpleSlider />
+              {/* <SimpleSlider /> */}
               <NavHeader />
               <MadinaCardlist />
-              <NavigationBar />
+              {/* <NavigationBar /> */}
               <Footer />
             </>
           }
@@ -215,7 +240,7 @@ const App = () => {
           element={
             <>
               <MyAccountpage />
-              <NavigationBar />
+              {/* <NavigationBar /> */}
             </>
           }
         />
@@ -224,7 +249,7 @@ const App = () => {
           element={
             <>
               <Navbar />
-              <NavigationBar />
+              {/* <NavigationBar /> */}
             </>
           }
         />
@@ -236,7 +261,7 @@ const App = () => {
             </>
           }
         />
-       
+
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </AnimatePresence>

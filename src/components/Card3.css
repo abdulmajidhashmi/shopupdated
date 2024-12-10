@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+
+
+
+.mrp-3{
+
+    margin: 6px;
+    color: #A9A9A9;
+    font-size: 13px;
+}
+.img-div-3{
+    border :ridge rgb(253 230 138);
+    border-width: thin;
+    height: auto;
+    max-height: 200px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    object-fit: cover;
+    overflow: hidden;
+    
+    
+}
+.img-3:hover{
+
+    transform: scale(1.1);
+    
+
+}
+
+.img-3{
+
+    transition: 0.3s ease-in-out;
+}
+.price-3{
+
+    margin: 6px;
+    color: green;
+    font-size: 17px;
+    font-weight: 500;
+}
+.name-3{
+    height: 40px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.main-cont-3{
+
+    font-family: "Fredoka", sans-serif !important;
+    width: 200px;
+    /* border: ridge #222; */
+    /* border: ridge rgba(0, 0, 0, 0.106); */
+    height: 330px;
+    margin: 2px 7px 2px 7px;
+
+    
+   
+}
+.price-flex-3{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.name-3{
+
+   text-align: center;
+}
+
+.add-to-cart-3{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    width: 85%;
+    background-color:  #1B1212;
+    color:white;
+    margin:auto;
+    border-radius: 4px;
+    
+}
+
+@media only screen and (max-width:700px){
+
+    .img-div-3{
+max-height: 150px;
+       
+
+    }
+
+    .add-to-cart-3{
+        
+       
+
+    }
+
+    .main-cont-3{
+        width: 45%;
+        height: 280px;
+
+    }
+}
+
+
+
+
+
+@keyframes slide-up {
+    0% {
+        transform: translateY(30px); /* Start 50px below */
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0); /* End at the original position */
+        opacity: 1;
+    }
+}
+
+.main-cont-3 {
+    opacity: 0; /* Initially hidden */
+    transform: translateY(30px); /* Initially positioned below */
+    transition: all 0.5s ease-in-out; /* Smooth transition */
+}
+
+.main-cont-3.animate-slide-up {
+    animation: slide-up 0.6s ease-in-out forwards; /* Apply slide-up animation */
+}
+
+
+.add-to-cart-3-disable{
+
+    display: none;
+}

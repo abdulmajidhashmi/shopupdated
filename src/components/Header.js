@@ -4,7 +4,7 @@ import Login from "./Login.js";
 import { useEffect, useState } from "react";
 import kimia from "./../images/kimia.jpeg";
 import { useRef, useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { addtocartcontext } from "./../context/Addtocartcontext";
 import SearchItems from "./SearchItems.js";
@@ -37,7 +37,6 @@ const Header = ({ props }) => {
   const navigate = useNavigate();
 
   const { user } = useSelector((state) => state.user);
-  
 
   // useEffect(() => {
 
@@ -60,9 +59,11 @@ const Header = ({ props }) => {
   const searchit2 = useRef();
   const noresult2 = useRef();
   const searchitul = useRef();
+  const navbarRef = useRef();
 
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [filteredProducts2, setFilteredProducts2] = useState([]);
+  const [navbar, setnavbar] = useState(false);
 
   function searchfield(e) {
     const searchString = e.target.value.toLowerCase();
@@ -134,16 +135,74 @@ const Header = ({ props }) => {
     }
   }, []);
 
+  function openbar() {
+    if (!navbarRef.current.classList.contains("navopen")) {
+      navbarRef.current.classList.add("navopen");
+      document.body.style.overflow = "auto";
+    } else {
+      navbarRef.current.classList.remove("navopen");
+      document.body.style.overflow = "auto";
+    }
+    setnavbar(!navbar);
+  }
+
   return (
     <>
       <div className="header">
+        <div className="header-bar" onClick={openbar}>
+          {navbar ? (
+            <i class="fa-solid fa-xmark"></i>
+          ) : (
+            <i class="fa-solid fa-bars"></i>
+          )}
+        </div>
         <div className="header-wrap">
           <Link to="/">
             {" "}
-            <h1 className="heading-main">H.RAHIM&CO.</h1>
+            <h1 className="heading-main">H. RAHIM & CO.</h1>
           </Link>
         </div>
-        <div className="header-mid-part">
+        <div className="header-ul-li-mid">
+          <ul className="header-ul-li">
+            <NavLink to="/">
+              {({ isActive }) => (
+                <li className={isActive ? "header-lis active" : "header-lis"}>
+                  HOME
+                </li>
+              )}
+            </NavLink>
+            <NavLink to="/dates">
+              {({ isActive }) => (
+                <li className={isActive ? "header-lis active" : "header-lis"}>
+                  DATES
+                </li>
+              )}
+            </NavLink>
+            <NavLink to="/dry-fruit">
+              {({ isActive }) => (
+                <li className={isActive ? "header-lis active" : "header-lis"}>
+                  DRY FRUIT
+                </li>
+              )}
+            </NavLink>
+            <NavLink to="/contact-us">
+              {({ isActive }) => (
+                <li className={isActive ? "header-lis active" : "header-lis"}>
+                  CONTACT US
+                </li>
+              )}
+            </NavLink>
+            <NavLink to="/my-orders">
+              {({ isActive }) => (
+                <li className={isActive ? "header-lis active" : "header-lis"}>
+                  MY ORDERS
+                </li>
+              )}
+            </NavLink>
+          </ul>
+        </div>
+
+        {/* <div className="header-mid-part">
           <div className="search-bar-container">
             <input
               className="search-bar"
@@ -169,26 +228,33 @@ const Header = ({ props }) => {
               </h2>
             </div>
           </div>
-        </div>
+        </div> */}
 
         <div className="icons_div">
-          {user ? (
+          <div className="magnify-search">
+            {" "}
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+          {/* {user ? (
             <Link to="/my-orders">
               <p className="my_orders">My Orders</p>
             </Link>
-          ) : null}
+          ) :  <Link to="/my-orders">
+          <p className="my_orders">My Orders</p>
+        </Link>} */}
           <div className={`${user ? "yes" : ""}`}>
             <div className="main_login1">
               {" "}
               <Link to="/log">
                 {" "}
                 <div className="login_div">
-                  <h4 className="login">Login/register</h4>
+                  {/* <h4 className="login">Login/register</h4> */}
+                  <i class="fa-regular fa-user"></i>
                 </div>
               </Link>
             </div>
 
-            <div className="main-login2">
+            {/* <div className="main-login2">
               {" "}
               <Link to="/log">
                 {" "}
@@ -196,7 +262,7 @@ const Header = ({ props }) => {
                   <i class="fa-regular fa-user"></i>
                 </div>
               </Link>
-            </div>
+            </div> */}
           </div>
           {user ? <UserData /> : null}
           <div className="cart-div">
@@ -210,7 +276,7 @@ const Header = ({ props }) => {
         </div>
       </div>
 
-      <div className="header2">
+      {/* <div className="header2">
         <div className="search-bar2-main-div">
           {" "}
           <input
@@ -235,6 +301,16 @@ const Header = ({ props }) => {
             </h1>
           </div>
         </div>
+      </div> */}
+
+      <div className="header-navbar" ref={navbarRef}>
+        <ul className="navbar-ul">
+          <li className="navbar-li">HOME</li>
+          <li className="navbar-li">DATES</li>
+          <li className="navbar-li">DRY FRUIT</li>
+          <li className="navbar-li">MY ORDERS</li>
+          <li className="navbar-li">CONTACT US</li>
+        </ul>
       </div>
     </>
   );

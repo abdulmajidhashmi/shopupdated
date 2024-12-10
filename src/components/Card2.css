@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+
+.img2{
+height: 100%;
+width: 100%;
+object-fit: cover;
+background-color: white;
+/* box-shadow: inset 0px 1px 8px 2px #FFE6FA; */
+}
+
+.image-div2{
+
+    height: 250px;
+    width: 100%;
+    background-color: white;
+    border: 2px solid   #FFE6FA ;
+    /* box-shadow: inset 0px 1px 8px 2px #FFE6FA; */
+
+}
+
+.add-to-cart2.counter-disable{
+
+    display: none;
+}
+.rate-flex{
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.div_main_cart{
+
+    /* border-radius: 8px 8px 0px 0px; */
+    /* box-shadow: 0px 2px 7px 1px #a1a1aa; */
+    height: 400px;
+    width: 250px;
+    /* font-family: "Fredoka", sans-serif !important; */
+    margin: 25px;
+    background-image: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%);
+   
+}
+.rate2{
+    margin: 6px;
+    font-size: 25px;
+    
+    /* color: #00308F; */
+}
+.mrp2{
+
+margin: 6px;
+color:grey;
+}
+
+.title2{
+
+    text-align: center;
+    height: 40px;
+    font-weight: 520;
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-div2{
+
+    display: flex;
+    justify-content: space-evenly;
+    
+
+}
+
+.add-to-cart2{
+
+background-color:  #222;
+color:white;
+}
+
+.buy-now2{
+
+    /* background-color: #13aa52; */
+    background-color: #33b249;
+    color:white;
+}
+.buy-now2,.add-to-cart2{
+
+    margin: 5px;
+    height: 40px;
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+
+@keyframes slide-up {
+    0% {
+        transform: translateY(30px); /* Start 50px below */
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0); /* End at the original position */
+        opacity: 1;
+    }
+}
+
+.div_main_cart {
+    opacity: 0; /* Initially hidden */
+    transform: translateY(30px); /* Initially positioned below */
+    transition: all 0.5s ease-in-out; /* Smooth transition */
+}
+
+.div_main_cart.animate-slide-up {
+    animation: slide-up 0.6s ease-in-out forwards; /* Apply slide-up animation */
+}
+
+
+
+
+@media only screen and (max-width:700px){
+
+
+    .div_main_cart{
+
+        width: 90%;
+        height: 400px;
+    }
+}
+
+
+
+
+
+

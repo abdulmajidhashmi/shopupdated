@@ -1,0 +1,23 @@
+
+.searchy{
+
+position: sticky;
+top:90px;
+z-index: 1000;
+    
+}
+
+@media only screen and (max-width:700px) {
+
+
+    .searchy{
+
+        top:70px;
+    }
+}
+
+
+.nones{
+
+    display: none;
+}

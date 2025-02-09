@@ -148,7 +148,7 @@ body{
 .icons_div{
 
    display: flex;
-   justify-content: end;
+   justify-content: flex-end;
    align-items: center;
    right: 0px;
    flex:1;
@@ -223,14 +223,14 @@ display:none;
 
 }
 .magnify-search{
-    border-radius: 50%;
+    /* border-radius: 50%;
     border: 2px solid black;
     height: 27px;
     width: 27px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 14px;
+    font-size: 14px; */
     /* transition: 0.3s ease-in-out; */
     
 }

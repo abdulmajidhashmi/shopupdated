@@ -1,64 +1,69 @@
 import { useEffect, useRef, useState } from "react";
-
-import { useSelector,useDispatch } from "react-redux";
-import { setToken ,userdata} from "./reducers/user.reducer";
-
+import "./userData.css";
+import { useSelector, useDispatch } from "react-redux";
+import { setToken, userdata } from "./reducers/user.reducer";
+import "./Header.css";
 import { Link, useNavigate } from "react-router-dom";
 
-const UserData = ()=>{
-
-    // const reduceToken = useSelector((state)=> state.user.setToken);
-    const logindivhover = useRef();
-    const dispatch = useDispatch();
-    const navigate = useNavigate();
-    const {user} = useSelector((state)=>state.user);
-    function loginDivClick(event) {
-
-        if (logindivhover.current.style.display === "none") {
-            logindivhover.current.style.display = "block";
-        } else {
-            logindivhover.current.style.display = "none"
-        }
+const UserData = () => {
+  const { user } = useSelector((state) => state.user);
+  // const reduceToken = useSelector((state)=> state.user.setToken);
+  const logindivhover = useRef();
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  function loginDivClick(event) {
+    if (!user) {
+      navigate("/log");
+    } else {
+      // if (logindivhover.current.style.display === "none") {
+      //     logindivhover.current.style.display = "block";
+      // } else {
+      //     logindivhover.current.style.display = "none"
+      // }
     }
+  }
+  const logout = () => {
+    localStorage.removeItem("token");
 
-    const logout = () => {
+    dispatch(setToken(""));
+    dispatch(userdata(null));
 
-        localStorage.removeItem('token');
-        
-        dispatch(setToken(''));
-        dispatch(userdata(null));
-        
-        // navigate('/hrahim/login');
+    // navigate('/hrahim/login');
 
-        
-        console.log("hi")
-    }
-    function loginHover(event) {
-        logindivhover.current.style.display = "block";
+    console.log("hi");
+  };
+  function loginHover(event) {
+    // logindivhover.current.style.display = "block";
+  }
 
-    }
-    function loginHideHover(event) {
-        logindivhover.current.style.display = "none";
+  function loginHideHover(event) {
+    // logindivhover.current.style.display = "none";
+  }
 
-    }
+  return (
+    <>
+      <div
+        onClick={loginDivClick}
+        onMouseOut={loginHideHover}
+        onMouseOver={loginHover}
+        className={`main_login1 ${user?'bg-green-700':''}  h-[27px] w-[27px] flex items-center justify-center border-2 border-gray-100  rounded-full text-[14px]`}
+      >
+        {user ? (
+          <h1 className="text-white">{user?.name.charAt(0).toUpperCase()}</h1>
+        ) : (
+          <i class="fa-regular fa-user"></i>
+        )}
+      </div>
 
+      {/* <div className={`profile-main-div ${user ? "" : "yes"}`}>
+             
+                 
 
-  
-    
-
-    return(
-
-
-        <div onClick={loginDivClick} onMouseOut={loginHideHover} onMouseOver={loginHover} className={`profile-main-div ${user ? "" : "yes"}`}>
-                    {/* <img className="profilepic"src={`${user?user.picture:""}`}/> */}
-                    <h1 className="profilepic">{user ? user.name.charAt(0): ""}</h1>
-
-
+                  
                     <div ref={logindivhover} class="loginhide max-w-sm mx-auto bg-white dark:bg-gray-900 rounded-lg overflow-hidden shadow-lg profilehov">
                         <div class="border-b px-4 pb-6">
                             <div class="text-center my-4">
-                                {/* <img class="h-32 w-32 rounded-full border-4 border-white dark:border-gray-800 mx-auto my-4"
-                        src={`${user?user.picture:""}`} alt=""/> */}
+                                
                                 <div class="py-2">
                                     <h3 class="font-bold text-2xl text-gray-800 dark:text-white mb-1">{`${user ? user.name : ""}`}</h3>
                                     <div class="inline-flex text-gray-700 dark:text-gray-300 items-center">
@@ -79,9 +84,10 @@ const UserData = ()=>{
                             </div>
                         </div>
                     </div>
-
-                </div>
-    )
-}
+                  
+                </div>  */}
+    </>
+  );
+};
 
 export default UserData;

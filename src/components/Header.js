@@ -13,9 +13,11 @@ import { axiosInstance } from "./backend/axiosInstance";
 import { setToken, userdata } from "./reducers/user.reducer";
 import { useNavigate } from "react-router-dom";
 import SearchItem2 from "./SearchItem2.js";
+import Searchbar from "./Searchbar/Searchbar.js";
 
 const Header = ({ props }) => {
   const [productdata, setproductdata] = useState([]);
+  const [isSearchbar, setisSearchbar] = useState(false);
 
   const getproducts = async () => {
     try {
@@ -231,9 +233,15 @@ const Header = ({ props }) => {
         </div> */}
 
         <div className="icons_div">
-          <div className="magnify-search">
-            {" "}
-            <i class="fa-solid fa-magnifying-glass"></i>
+          <div
+            className={` ${
+              isSearchbar
+                ? "magnify-search text-color-yellow h-[27px] w-[27px] flex items-center justify-center border-2 border-gray-100 text-[#f59e0b] rounded-full text-[14px]"
+                : "magnify-search text-color-yellow h-[27px] w-[27px] flex items-center justify-center border-2 border-gray-100 rounded-full text-[14px]"
+            }`}
+            onClick={() => setisSearchbar(!isSearchbar)}
+          >
+            <i class="fa-solid fa-magnifying-glass  text-gray-40"></i>
           </div>
           {/* {user ? (
             <Link to="/my-orders">
@@ -242,29 +250,8 @@ const Header = ({ props }) => {
           ) :  <Link to="/my-orders">
           <p className="my_orders">My Orders</p>
         </Link>} */}
-          <div className={`${user ? "yes" : ""}`}>
-            <div className="main_login1">
-              {" "}
-              <Link to="/log">
-                {" "}
-                <div className="login_div">
-                  {/* <h4 className="login">Login/register</h4> */}
-                  <i class="fa-regular fa-user"></i>
-                </div>
-              </Link>
-            </div>
-
-            {/* <div className="main-login2">
-              {" "}
-              <Link to="/log">
-                {" "}
-                <div className="login_div2">
-                  <i class="fa-regular fa-user"></i>
-                </div>
-              </Link>
-            </div> */}
-          </div>
-          {user ? <UserData /> : null}
+        
+           <UserData /> 
           <div className="cart-div">
             <Link to="/addtocart">
               <h1 className="cart-number">{count}</h1>
@@ -312,6 +299,7 @@ const Header = ({ props }) => {
           <li className="navbar-li">CONTACT US</li>
         </ul>
       </div>
+      {isSearchbar && <Searchbar />}
     </>
   );
 };

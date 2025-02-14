@@ -13,5 +13,5 @@ const Animations = (Component) => {
     </motion.div>
   );
 };
-
+//test
 export default Animations;

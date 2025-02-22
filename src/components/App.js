@@ -90,9 +90,9 @@ import Card3 from "./Card3.js";
 import Anjeer from "./Anjeer.js";
 import ProductList from "./CardList.js";
 import { useState } from "react";
+import Listing from "./list/index.js";
 
 const App = () => {
-  const location = useLocation();
   const [cart,setcart]=useState([]);
 
     function addtocartprop(data){
@@ -100,9 +100,9 @@ const App = () => {
     }
 
   return (
-    <AnimatePresence initial="false">
-      {/* <Scrolltotop /> */}
-      <Routes location={location} key={location.pathname}>
+    <>
+      <Routes >
+        <Route path='/products' element={<><Listing/></>}/>
         <Route
           path="/admin/orders"
           element={
@@ -264,7 +264,8 @@ const App = () => {
 
         <Route path="*" element={<PageNotFound />} />
       </Routes>
-    </AnimatePresence>
+    
+    </>
   );
 };
 

@@ -1,0 +1,18 @@
+.img_setting{
+
+   object-fit: cover;
+   object-position: center;
+    
+}
+.list_texting{
+
+
+    font-size: 30px;
+    font-weight: 800;
+    color:#333333;
+}
+
+.list_main{
+
+    color:#2b4a91;
+}

@@ -11,6 +11,7 @@ import Animations from "./Animations.js";
 import Chatbot from "./Chatbot.js";
 import Types from "./Types.js";
 import Landingpage from "./Landingpage.js";
+import News from "./news/index.js";
 
 const Component =()=>{
 
@@ -28,9 +29,10 @@ return(
         {/* <SimpleSlider/> */}
         <Landingpage/>
         <Types/>
-        <NavHeader/>
+        {/* <NavHeader/> */}
         <ProductList cartlength={addtocartprop}/>
         {/* <NavigationBar/> */}
+        {/* <News/> */}
         <Iframe/>
         <Footer/>
         {/* <Chatbot/> */}
